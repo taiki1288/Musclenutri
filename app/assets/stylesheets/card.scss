@@ -1,0 +1,13 @@
+.jumbotron {
+    // background-image: url(dna.jpg);
+    // background-size: cover;
+    // background-position: center no-repeat;
+}
+
+.jumbotron-extend {
+    background-image: url(dna.jpg);
+    position: relative;
+    height: 100vh;
+    min-height: 300px;
+    background-size: cover;
+}
