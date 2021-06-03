@@ -8,7 +8,43 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %p.notice= notice
-    %p.alert= alert
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-info.w-100
+      .container-fluid
+        %a.navbar-brand.fs-3.fw-bolder.text-white.nav-title{href: "#"} Musclenutri
+        %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", type: "button"}
+          %span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        .navber-right
+          %ul.navbar-nav.me-auto.mb-2.mb-lg-0.mr-auto
+            -# %li.nav-item
+            -#   %a.nav-link.active{"aria-current" => "page", href: "#"} ホーム
+            %li.nav-item
+              %a.nav-link.text-white{href: "#"} ホーム
+            %li.nav-item
+              %a.nav-link.text-white{href: "#"} プロフィール
+            %li.nav-item
+              %a.nav-link.text-white{href: "#"} 商品検索
+            %li.nav-item
+              %a.nav-link.text-white{href: "#"} ユーザー一覧
+            %li.nav-item
+              %a.nav-link.text-white{href: "#"} ログイン
+            -# %li.nav-item.dropdown
+              -# %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", href: "#", role: "button"}
+                Dropdown
+              -# %ul.dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+              -#   %li
+              -#     %a.dropdown-item{href: "#"} Action
+              -#   %li
+              -#     %a.dropdown-item{href: "#"} Another action
+              -#   %li
+              -#     %hr.dropdown-divider/
+              -#   %li
+              -#     %a.dropdown-item{href: "#"} Something else here
+              -#   %li.nav-item
+              -#     %a.nav-link.disabled{"aria-disabled" => "true", href: "#", tabindex: "-1"} Disabled
+          -# %form.d-flex
+            -# %input.form-control.me-2{"aria-label" => "Search", placeholder: "Search", type: "search"}/
+            -# %button.btn.btn-outline-success{type: "submit"} Search
     = yield
