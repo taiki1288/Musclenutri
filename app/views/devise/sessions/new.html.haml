@@ -1,27 +1,27 @@
-.jumbotron.jumbotron-extend.mb-5
+.jumbotron.jumbotron-extend
   .container
     .card-container.pt-5
       .card-container-item
-        .text-black.text-box.fs-2.fw-bold.mb-3 ログイン
+        .text-white.text-box.fs-2.fw-bold.mb-3 ログイン
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-          .field.text-black
+          .field.text-white.fw-bold
             = f.label :メールアドレス, class: 'mb-3'
             %br/
             = f.email_field :email, autofocus: true, autocomplete: "email", class: 'text-field mb-3'
-          .field.text-black
+          .field.text-white.fw-bold
             = f.label :パスワード, class: 'mb-3'
             %br/
             = f.password_field :password, autocomplete: "current-password", class: 'text-field mb-4'
           - if devise_mapping.rememberable?
             .field.remember-label.mb-4
               = f.check_box :remember_me
-              = f.label :次回から自動でログイン
+              = f.label :次回から自動でログイン, class: 'text-white fw-bold'
           .actions.mb-3
             = f.submit "ログイン", class: 'login-btn'
           .actions.mb-3
             = f.submit "ゲストログイン", class: 'login-btn2'
-        %p.start-signup.mb-1
+        %p.start-signup.mb-1.text-white.fw-bold
           %a{href: "/users/sign_up"} 新規登録はこちら
-        %p.get-password
+        %p.start-signup.text-white.fw-bold
           %a{href: "/users/password/new"} パスワードを忘れた場合
         -# = render "devise/shared/links"
