@@ -10,6 +10,10 @@
             %br/
             = f.email_field :email, autofocus: true, autocomplete: "email", class: 'text-field mb-3'
           .field.text-white.fw-bold
+            = f.label :ユーザーネーム, class: 'mb-3'
+            %br/
+            = f.text_field :username, autofocus: true, class: 'text-field mb-3'
+          .field.text-white.fw-bold
             = f.label :パスワード, class: 'mb-3'
             -# - if @minimum_password_length
             -#   %em
