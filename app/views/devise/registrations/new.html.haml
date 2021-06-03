@@ -1,21 +1,27 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.jumbotron.jumbotron-extend
+  .container
+    .card-container.pt-5
+      .card-container-item
+        .text-white.text-box.fs-2.fw-bold.mb-3 新規登録
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = render "devise/shared/error_messages", resource: resource
+          .field.text-white.fw-bold
+            = f.label :メールアドレス, class: 'mb-3'
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: 'text-field mb-3'
+          .field.text-white.fw-bold
+            = f.label :パスワード, class: 'mb-3'
+            -# - if @minimum_password_length
+            -#   %em
+            -#     (#{@minimum_password_length} characters minimum)
+            %br/
+            = f.password_field :password, autocomplete: "new-password", class: 'text-field mb-3'
+          .field.mb-3.text-white.fw-bold
+            = f.label :パスワード再入力, class: 'text-field'
+            %br/
+            = f.password_field :password_confirmation, autocomplete: "new-password", class: 'text-field mb-3'
+          .actions.mb-3
+            = f.submit "アカウント登録", class: 'login-btn'
+          %p.start-signup.mb-1.text-white.fw-bold
+            %a{href: "/users/sign_in"} ログインはこちら
+        -# = render "devise/shared/links"
