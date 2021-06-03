@@ -7,6 +7,12 @@ class ApplicationController < ActionController::Base
       new_user_session_path # ログアウト後に遷移するpathを設定
     end
 
+    def check_guest
+      email = resource&.email || params[:user][:email].downcase
+      if email == 'guest@example.com'
+        redirect_to root_path, alert: 'ゲストユーザーは削除できません'
+      end
+    end
     # protect_from_forgery with: :exception
     # before_action :configure_permitted_parameters, if: :devise_controller?
   
