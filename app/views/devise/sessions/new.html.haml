@@ -19,7 +19,7 @@
           .actions.mb-3
             = f.submit "ログイン", class: 'login-btn'
           .actions.mb-3
-            = button_to "ゲストログイン(閲覧用)", homes_guest_sign_in_path, method: :post, class: 'login-btn2'
+            = link_to "ゲストログイン(閲覧用)", users_guest_sign_in_path, method: :post, class: 'login-btn2'
         %p.start-signup.mb-1.text-white.fw-bold
           %a{href: "/users/sign_up"} 新規登録はこちら
         %p.start-signup.text-white.fw-bold
