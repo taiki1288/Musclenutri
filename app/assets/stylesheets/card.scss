@@ -5,7 +5,7 @@
 }
 
 .jumbotron-extend {
-    background-image: url(protein.png);
+    background-image: url(protein.jpeg);
     position: relative;
     height: 100vh;
     min-height: 300px;
@@ -27,6 +27,8 @@
 }
 
 .card-container {
+    // width: 500px;
+    text-align: center;
 }
 
 .text-field {
@@ -68,4 +70,12 @@
 
 a {
     text-decoration: none;
+    cursor: pointer;
+}
+
+.card-container-item {
+    padding: 20px;
+    // box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 8px #000;
+    background-color: #fff;
 }
