@@ -16,10 +16,10 @@
             .field.remember-label.mb-4
               = f.check_box :remember_me
               = f.label :次回から自動でログイン, class: 'text-white fw-bold'
-          .actions.mb-3
+          .actions.mb-4
             = f.submit "ログイン", class: 'login-btn'
           .actions.mb-3
-            = f.submit "ゲストログイン", class: 'login-btn2'
+            = link_to "ゲストログイン(閲覧用)", users_guest_sign_in_path, method: :post, class: 'login-btn2 text-white fw-bold btn btn-danger'
         %p.start-signup.mb-1.text-white.fw-bold
           %a{href: "/users/sign_up"} 新規登録はこちら
         %p.start-signup.text-white.fw-bold
