@@ -1,10 +1,19 @@
-%h2 Forgot your password?
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .actions
-    = f.submit "Send me reset password instructions"
-= render "devise/shared/links"
+.jumbotron.jumbotron-extend
+  .container
+    .card-container.pt-5
+      .card-container-item
+        .text-white.text-box.fs-2.fw-bold.mb-3 パスワードの再設定
+        %p.text-white Musclenutriに登録したメールアドレスを入力してください。
+        = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+          = render "devise/shared/error_messages", resource: resource
+          .field.text-white.fw-bold
+            = f.label :メールアドレス, class: 'mb-3'
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: 'text-field mb-4'
+          .actions.mb-3
+            = f.submit "送信", class: 'login-btn'
+        %p.start-signup.mb-1.text-white.fw-bold
+          %a{href: "/users/sign_in"} アカウントをお持ちの方
+        %p.start-signup.text-white.fw-bold
+          %a{href: "/users/sign_up"} アカウントをお持ちでない方
+        -# = render "devise/shared/links"
