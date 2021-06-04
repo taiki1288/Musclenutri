@@ -1,0 +1,49 @@
+.card-body {
+    padding: 24px;
+    box-shadow: 0px 0px 8px #000;
+    height: 620px;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin: 0 auto;
+    margin-top: 60px;
+    max-width: 600px;
+    max-height: 700px;
+    margin-bottom: 60px;
+}
+
+.profile-image {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    max-width: 100%;
+    min-width: 150px;
+}
+
+.profilePage_user_have {
+    display: flex;
+    margin-left: 189px;
+    // text-align: center;
+}
+
+.line {
+    margin: 0 1rem;
+    width: 1px;
+    height: 28px;
+    background-color: #000;
+}
+
+.profilePage_user_have_item {
+    margin-left: 20px;
+}
+
+.count {
+    margin-right: 8px;
+}
+
+.introduction {
+    color: gray;
+}
+
+
