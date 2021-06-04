@@ -1,0 +1,37 @@
+.login-btn {
+    width: 300px;
+    height: 40px;
+    background-color: pink;
+    color: white;
+    border: pink;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-btn2 {
+    width: 300px;
+    height: 40px;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.login-btn3 {
+    width: 300px;
+    height: 40px;
+    color: white;
+    border: none;
+    font-weight: bold;
+    display       : inline-block;
+    border-radius : 5px;
+    font-size     : 18px;
+    background    : skyblue;
+    color         : #ffffff;
+    line-height   : 2.3em; 
+    text-decoration: none;
+    cursor        : pointer;
+}
+
+
