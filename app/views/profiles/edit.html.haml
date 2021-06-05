@@ -1,0 +1,26 @@
+.container
+  .card-body.text-center
+    %h5.card-title.pt-3.mb-4 プロフィール
+    = image_tag 'icon_default.png', class: 'profile-image mb-3'
+    = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+      %div
+        = f.label :avatar, class: 'avatar-btn' do
+          %p 画像を変更
+          = f.file_field :avatar, class: 'avatar-field', style: 'display:none'  
+      %div
+        = f.label :nickname, '名前', class: 'nickname-text mb-3'
+      %div
+        = f.text_field :nickname, class: 'nickname-field mb-4' 
+      %div 
+        = f.label :introduction, '自己紹介', class: 'introduction-text'
+      %div
+        = f.text_area :introduction, class: 'introduction-field mb-5'
+      .actions
+        = f.submit "保存", class: 'login-btn'    
+    
+        
+      
+
+      
+        
+        
