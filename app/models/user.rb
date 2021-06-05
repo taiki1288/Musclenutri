@@ -26,6 +26,10 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
 
+  def display_name
+    profile&.nickname || self.username
+  end
+
   def prepare_profile
     profile || build_profile
   end

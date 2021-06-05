@@ -2,7 +2,7 @@
   .card-body.text-center
     %h5.card-title.pt-3.mb-4 プロフィール
     = image_tag 'icon_default.png', class: 'profile-image mb-3'
-    %p.fs-4.mb-4.fw-bold= current_user.username
+    %p.fs-4.mb-4.fw-bold= current_user.display_name
     
     .profilePage_user_have
       .profilePage_user_have_item
@@ -13,7 +13,9 @@
         %p.count 100人
     .profile-introduction.mb-5 
       %p.introduction 自己紹介
-      %p.introduction-content 私の名前はやました たいきというものです。よろしくお願い致します。🙇‍♂️
+      %p.introduction-content
+        = current_user.profile&.introduction
+        
 
     = link_to 'プロフィールを編集する', edit_profile_path, method: :get, class: 'login-btn3'
     
