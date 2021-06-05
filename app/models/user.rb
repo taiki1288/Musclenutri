@@ -33,6 +33,14 @@ class User < ApplicationRecord
   def prepare_profile
     profile || build_profile
   end
+
+  def avatar_image
+    if profile&.avatar&.attached?
+      profile.avatar
+    else
+      'icon_default.png'
+    end
+  end
   
   def self.guest
     find_or_create_by(email: 'guest@example.com') do |user|
