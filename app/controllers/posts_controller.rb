@@ -35,6 +35,12 @@ class PostsController < ApplicationController
         end
     end
 
+    def destory
+        post = current_user.posts.find(params[:id])
+        post.destory!
+        redirect_to root_path
+    end
+
     private
     def post_params
         params.require(:post).permit(:name, :content, :price, :image).merge(user_id: current_user.id)
