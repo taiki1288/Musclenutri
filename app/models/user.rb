@@ -25,6 +25,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :profile, dependent: :destroy
+  has_many :posts, dependent: :destroy
 
   def display_name
     profile&.nickname || self.username
