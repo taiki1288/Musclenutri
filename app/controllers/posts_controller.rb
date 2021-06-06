@@ -15,10 +15,19 @@ class PostsController < ApplicationController
 
     def create
         @post = current_user.posts.build(post_params)
+        if @post.save!
+          redirect_to post_path(@post)
+        else
+          render :new
+        end
+    end
+
+    def edit
+        @post = current_user.posts.find(params[:id])
     end
 
     private
-      def post_params
+    def post_params
         params.require(:post).permit(:name, :content, :price, :image).merge(user_id: current_user.id)
-      end
+    end
 end
