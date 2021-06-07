@@ -1,17 +1,29 @@
 .container
   .post-new-container.mt-5
     = form_with(model: @post, local: true) do |f|
+      .review.text-center.mb-3 口コミ投稿
+      %div.text-center.mb-4
+        = f.label :name, '商品名', class: 'new-post-font'
+      %div.text-center
+        = f.text_field :name, class: 'product-name' 
+      %div.text-center
+        = image_tag 'noimage.png', class: 'product-noimage'
       %div 
-        = f.label :eyecatch, 'アイキャッチ'
-      %div 
-        = f.file_field :eyecatch
-      %div
-        = f.label :title, 'タイトル'
-      %div
-        = f.text_field :title, class: 'text'
-      %div
-        = f.label :content, '内容'
-      %div
-        = f.rich_text_area :content
-      = f.submit '保存', class: 'btn-primary'
+        = f.label :image, class: 'avatar-btn' do
+          %p.text-center 画像を選択
+          = f.file_field :image, class: 'avatar-field', style: 'display:none' 
+      %div.text-center.mb-3
+        = f.label :price, '購入価格', class: 'new-post-font'
+      %div.text-center.mb-5
+        = f.number_field :price, step: '0.1', placeholder: '¥0', class: 'price-area'
+      %div.text-center.mb-3
+        = f.label :content, '内容', class: 'new-post-font'
+      %div.text-center.mb-5
+        = f.text_area :content, placeholder: '(例) このプロテインはとても飲みやすくて粉も溶けやすいのでいいです！', class: 'content-area'
+      %div.text-center
+        = f.submit '投稿', class: 'newPost-login-btn'
+        
+%footer.footer
+  .container
+    %p.text-muted.text-center ©︎ Copyright 2021 MuscleNutri
       

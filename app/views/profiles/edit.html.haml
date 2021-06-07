@@ -1,5 +1,5 @@
 .container
-  .card-body.text-center
+  .profile-card-body.text-center
     %h5.card-title.pt-3.mb-4 プロフィール
     = image_tag current_user.avatar_image, class: 'profile-image mb-3'
     = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
