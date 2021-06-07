@@ -19,8 +19,6 @@
       #navbarSupportedContent.collapse.navbar-collapse
         .navber-right
           %ul.navbar-nav.me-auto.mb-2.mb-lg-0.mr-auto
-            -# %li.nav-item
-            -#   %a.nav-link.active{"aria-current" => "page", href: "#"} ホーム
             %li.nav-item
               %a.i.fa.fa-home.nav-link.text-white.fw-bold{href: "/"} ホーム
             %li.nav-item
@@ -35,7 +33,7 @@
             - else
               %li.nav-item
                 %a.i.fa.fa-sign-in.nav-link.text-white.fw-bold{href: "/users/sign_in"} ログイン
-                
+
     - if flash.present?
       .flash
         - flash.each do |key, value|
