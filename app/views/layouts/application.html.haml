@@ -22,19 +22,19 @@
             -# %li.nav-item
             -#   %a.nav-link.active{"aria-current" => "page", href: "#"} ホーム
             %li.nav-item
-              %a.nav-link.text-white{href: "/"} ホーム
+              %a.i.fa.fa-home.nav-link.text-white.fw-bold{href: "/"} ホーム
             %li.nav-item
-              %a.nav-link.text-white{href: "/profile"} プロフィール
+              %a.i.fa.fa-user.nav-link.text-white.fw-bold{href: "/profile"} プロフィール
             %li.nav-item
-              %a.nav-link.text-white{href: "#"} 商品検索
+              %a.i.fa.fa-shopping-cart.nav-link.text-white.fw-bold{href: "#"} 商品検索
             %li.nav-item
-              %a.nav-link.text-white{href: "#"} ユーザー一覧
+              %a.i.fa.fa-users.nav-link.text-white.fw-bold{href: "#"} ユーザー一覧
             - if user_signed_in?
               %li.nav-item
-                = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link text-white'
+                = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link text-white i fa fa-sign-out fw-bold'
             - else
               %li.nav-item
-                %a.nav-link.text-white{href: "/users/sign_in"} ログイン
+                %a.i.fa.fa-sign-in.nav-link.text-white.fw-bold{href: "/users/sign_in"} ログイン
             -# %li.nav-item.dropdown
               -# %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", href: "#", role: "button"}
                 Dropdown
