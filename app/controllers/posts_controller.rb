@@ -17,9 +17,9 @@ class PostsController < ApplicationController
         @post = current_user.posts.build(post_params)
         # binding.pry
         if @post.save!
-          redirect_to root_path
+          redirect_to root_path, notice: '投稿が完了しました。'
         else
-          render :new
+          render :new, notice: '投稿に失敗しました。'
         end
     end
 

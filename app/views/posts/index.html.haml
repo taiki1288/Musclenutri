@@ -45,14 +45,15 @@
         - @posts.each do |post|
           .col-sm-3.d-flex
             .post-card-body
-              = image_tag post.image, class: 'card-img-top'
-              %p.post-title.text-center= "商品名: #{post.name}"
-              %p.post-price.text-center= "購入価格: #{post.price}円"
-              %p.card-text.text-center= "感想: #{post.content}"
+              = link_to post_path(post), class: 'post-link' do
+                = image_tag post.image, class: 'card-img-top'
+                %p.post-title.text-center.no-underline= "商品名: #{post.name}"
+                %p.product-price.text-center.no-underline= "購入価格: #{post.price}円"
+                %p.card-text.text-center.no-underline= "感想: #{post.content}"
 
-              = image_tag post.user.avatar_image, class: 'avatar-image'
-              .review-name.mt-1
-                %p.text-left= post.user.profile.nickname
+                = image_tag post.user.avatar_image, class: 'avatar-image'
+                .review-name.mt-1
+                  %p.text-left.no-underline= post.user.profile.nickname
      
   = link_to new_post_path do
     .float_btn
