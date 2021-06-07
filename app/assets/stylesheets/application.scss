@@ -1,12 +1,17 @@
 @import 'card';
 @import 'flash';
-@import "font-awesome-sprockets";
-@import "font-awesome";
 @import "profile";
 @import "button";
+@import "post";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+// @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
-body {
-    // padding-top: 60px;
+  body {
+    background: #f2f2f2;
+  }
+
+  .container {
   }
   
   section {
@@ -23,4 +28,13 @@ body {
   
   .center h1 {
     margin-bottom: 10px;
+  }
+
+  .footer {
+    background-color: skyblue;
+    padding: 20px 0;
+    
+    p {
+      margin-bottom: 0;
+    }
   }
