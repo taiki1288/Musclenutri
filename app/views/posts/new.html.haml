@@ -1,0 +1,17 @@
+.container
+  .post-new-container.mt-5
+    = form_with(model: @post, local: true) do |f|
+      %div 
+        = f.label :eyecatch, 'アイキャッチ'
+      %div 
+        = f.file_field :eyecatch
+      %div
+        = f.label :title, 'タイトル'
+      %div
+        = f.text_field :title, class: 'text'
+      %div
+        = f.label :content, '内容'
+      %div
+        = f.rich_text_area :content
+      = f.submit '保存', class: 'btn-primary'
+      
