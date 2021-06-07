@@ -39,60 +39,27 @@
           %p.post-title.text-center EAA
           %p.card-text こちらはEAAのサプリになります。
 
-  %h2.text-center.mb-5 口コミされたプロテインとサプリ
+    %h2.text-center.mb-5 口コミされたプロテインとサプリ
+    .post-card
+      .row
+        - @posts.each do |post|
+          .col-sm-3.d-flex
+            .post-card-body
+              = link_to post_path(post), class: 'post-link' do
+                = image_tag post.image, class: 'card-img-top'
+                %p.post-title.text-center.no-underline= "商品名: #{post.name}"
+                %p.product-price.text-center.no-underline= "購入価格: #{post.price}円"
+                %p.card-text.text-center.no-underline= "感想: #{post.content}"
 
-  .post-card
-    .row
-      .col-sm.d-flex
-        .post-card-body
-          %img.card-img-top{alt: "...", src: "/assets/eaa.jpeg"}
-          %p.post-title.text-center DNS SP
-          %p.card-text こちらのプロテインはDNSのSPになります。
-      .col-sm.d-flex
-        .post-card-body
-          %img.card-img-top{alt: "...", src: "/assets/dns2.jpeg"}
-          %p.post-title.text-center DNS SP
-          %p.card-text こちらのプロテインはDNSのSPになります。
-      .col-sm.d-flex
-        .post-card-body
-          %img.card-img-top{alt: "...", src: "/assets/dns2.jpeg"}
-          %p.post-title.text-center DNS SP
-          %p.card-text こちらのプロテインはDNSのSPになります。aaaaaaaaaaaあああああああああああああああああああああ
-      .col-sm.d-flex
-        .post-card-body
-          %img.card-img-top{alt: "...", src: "/assets/dns2.jpeg"}
-          %p.post-title.text-center DNS SP
-          %p.card-text こちらのプロテインはDNSのSPになります。
-
-  .post-card.mb-5
-    .row
-      .col-sm.d-flex
-        .post-card-body
-          %img.card-img-top{alt: "...", src: "/assets/dns2.jpeg"}
-          %p.post-title.text-center DNS SP
-          %p.card-text こちらのプロテインはDNSのSPになります。
-      .col-sm.d-flex
-        .post-card-body
-          %img.card-img-top{alt: "...", src: "/assets/dns2.jpeg"}
-          %p.post-title.text-center DNS SP
-          %p.card-text こちらのプロテインはDNSのSPになります。
-      .col-sm.d-flex
-        .post-card-body
-          %img.card-img-top{alt: "...", src: "/assets/dns2.jpeg"}
-          %p.post-title.text-center DNS SP
-          %p.card-text こちらのプロテインはDNSのSPになります。
-      .col-sm.d-flex
-        .post-card-body
-          %img.card-img-top{alt: "...", src: "/assets/dns2.jpeg"}
-          %p.post-title.text-center DNS SP
-          %p.card-text こちらのプロテインはDNSのSPになります。
+                = image_tag post.user.avatar_image, class: 'avatar-image'
+                .review-name.mt-1
+                  %p.text-left.no-underline= post.user.profile.nickname
      
-     
-= link_to new_post_path do
-  .float_btn
-    %i.fa-2x.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+  = link_to new_post_path do
+    .float_btn
+      %i.fa-2x.fa.fa-pencil-square-o{"aria-hidden" => "true"}
         
-%footer.footer
+%footer.footer.mt-5
   .container
     %p.text-muted.text-center ©︎ Copyright 2021 MuscleNutri
           

@@ -51,10 +51,6 @@
     }
   }
 
-  input[type="text"] {
-    border: 1px solid #999;
-  }
-
   input[type="text"]:focus {
     border: 2px solid skyblue;
     outline: 0;
@@ -68,4 +64,8 @@
   textarea:focus {
     border: 2px solid skyblue;
     outline: 0;
+  }
+
+  .no-underline{
+    text-decoration: none !important;
   }

@@ -100,6 +100,7 @@
     border-color: #e2e8f0;
     border-radius: 5px;
     text-align: right;
+    color: black;
 }
 
 .content-area {
@@ -109,6 +110,7 @@
     --border-opacity: 1;
     border-color: #e2e8f0;
     border-radius: 5px;
+    color: black;
 }
 
 input::placeholder {
@@ -129,4 +131,29 @@ textarea::placeholder {
     color: #fafafa;
     box-shadow: 0px 0px 8px ;
     padding-top: 10px;
+    color: black;
+}
+
+.avatar-image {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0px;
+    border-radius: 100%;
+}
+
+.review-name {
+    margin-right: 30px;
+    color: black;
+}
+
+.post-link {
+    text-decoration: none;
+}
+
+.product-price {
+    color: black;
+}
+
+.card-text {
+    color: black;
 }
