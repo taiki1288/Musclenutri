@@ -130,3 +130,15 @@ textarea::placeholder {
     box-shadow: 0px 0px 8px ;
     padding-top: 10px;
 }
+
+.avatar-image {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0px;
+    border-radius: 100%;
+}
+
+.review-name {
+    // float: right;
+    margin-right: 30px;
+}
