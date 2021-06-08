@@ -47,11 +47,12 @@
             .post-card-body
               = link_to post_path(post), class: 'post-link' do
                 = image_tag post.image, class: 'card-img-top'
-                %p.post-title.text-center.no-underline= "商品名: #{post.name}"
+                %p.post-title.text-center.no-underline.mb-3= "商品名: #{post.name}"
 
-                = image_tag post.user.avatar_image, class: 'avatar-image'
-                .review-name.mt-1
-                  %p.text-left.no-underline= post.user.profile.nickname
+                .post-avatar-name.text-center
+                  = image_tag post.user.avatar_image, class: 'avatar-image'
+                  .review-name
+                    %p.text-left.no-underline= post.user.profile.nickname
      
   = link_to new_post_path do
     .float_btn

@@ -5,9 +5,10 @@
     %p.product-price.text-center.no-underline= "購入価格: #{@post.price}円"
     %p.card-text.text-center.no-underline= "感想: #{@post.content}"
 
-    = image_tag @post.user.avatar_image, class: 'avatar-image'
-    .review-name.mt-1
-      %p.text-left.no-underline= @post.user.profile.nickname
+    .post-avatar-name.text-center
+      = image_tag @post.user.avatar_image, class: 'avatar-image mb-2'
+      .review-name.mt-1.text-center.mb-2
+        %p.text-left.no-underline= @post.user.profile.nickname
     
     %p.text-center.mb-3 レビューを投稿
 

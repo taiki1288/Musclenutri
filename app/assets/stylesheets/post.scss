@@ -129,7 +129,7 @@ textarea::placeholder {
     font-weight: bold;
     font-size: 20px;
     color: #fafafa;
-    box-shadow: 0px 0px 8px ;
+    box-shadow: 0px 0px 8px;
     padding-top: 10px;
     color: black;
 }
@@ -142,7 +142,7 @@ textarea::placeholder {
 }
 
 .review-name {
-    margin-right: 30px;
+    // margin-right: 30px;
     color: black;
 }
 
@@ -175,5 +175,11 @@ textarea::placeholder {
         margin-left: auto;
         margin-right: auto;
         display: block;
+    }
+}
+
+.post-avatar-name {
+    img {
+        margin-bottom: 5px;
     }
 }
