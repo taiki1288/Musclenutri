@@ -1,1 +1,18 @@
-%h1 Show
+.container
+  .post-card-body-show.mt-5
+    = image_tag @post.image, class: 'card-img-top'
+    %p.post-title.text-center.no-underline= "商品名: #{@post.name}"
+    %p.product-price.text-center.no-underline= "購入価格: #{@post.price}円"
+    %p.card-text.text-center.no-underline= "感想: #{@post.content}"
+
+    = image_tag @post.user.avatar_image, class: 'avatar-image'
+    .review-name.mt-1
+      %p.text-left.no-underline= @post.user.profile.nickname
+     
+= link_to new_post_path do
+  .float_btn
+    %i.fa-2x.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+        
+%footer.footer.mt-5
+  .container
+    %p.text-muted.text-center ©︎ Copyright 2021 MuscleNutri

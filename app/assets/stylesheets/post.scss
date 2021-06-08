@@ -35,7 +35,7 @@
 }
 
 .post-card-body {
-    width: 90%;
+    width: 100%;
     padding: 1.25rem;
     padding: 24px;
     box-shadow: 0px 0px 8px #000;
@@ -156,4 +156,24 @@ textarea::placeholder {
 
 .card-text {
     color: black;
+}
+
+.post-card-body-show {
+    width: 60%;
+    padding: 1.25rem;
+    padding: 24px;
+    box-shadow: 0px 0px 8px #000;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 10px;
+
+    .card-img-top {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
 }

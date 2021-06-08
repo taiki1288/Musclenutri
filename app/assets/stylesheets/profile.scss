@@ -1,14 +1,12 @@
 .profile-card-body {
     padding: 24px;
     box-shadow: 0px 0px 8px #000;
-    // height: 620px;
     align-items: center;
     margin-top: 30px;
     margin-bottom: 30px;
     margin: 0 auto;
     margin-top: 60px;
     max-width: 600px;
-    // max-height: 700px;
     margin-bottom: 60px;
 }
 
@@ -24,7 +22,6 @@
 .profilePage_user_have {
     display: flex;
     margin-left: 189px;
-    // text-align: center;
 }
 
 .line {
@@ -44,10 +41,6 @@
 
 .introduction {
     color: gray;
-}
-
-.avatar-field {
-    // display: none;
 }
 
 .avatar-btn {
@@ -88,18 +81,10 @@
     min-height: 30px;
     outline: none;
     transition: all .3s;
-    // width: 50%;
-    // padding: .5rem .75rem;
-    // border-width: 1px;
-    // --border-opacity: 1;
-    // border-color: #e2e8f0;
-    // border-color: rgba(226,232,240,var(--border-opacity));
-    // border-radius: .375rem;
 }
 
 .introduction-text {
     color: gray;
-    // margin-left: -350px;
 }
 
 .introduction-field {
@@ -113,13 +98,6 @@
     min-height: 30px;
     outline: none;
     transition: all .3s;
-    // width: 50%;
-    // padding: .5rem .75rem;
-    // border-width: 1px;
-    // --border-opacity: 1;
-    // border-color: #e2e8f0;
-    // border-color: rgba(226,232,240,var(--border-opacity));
-    // border-radius: .375rem;
 
     textarea {
         line-height: normal;
