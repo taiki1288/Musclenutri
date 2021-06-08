@@ -8,7 +8,28 @@
     = image_tag @post.user.avatar_image, class: 'avatar-image'
     .review-name.mt-1
       %p.text-left.no-underline= @post.user.profile.nickname
-     
+    
+    %p.text-center.mb-3 レビューを投稿
+
+    .rating-box.mt-3
+      = form_with(model: @review, url: post_reviews_path(@post), method: 'post', local: true) do |f|
+        .main-rating.text-center
+          .reviews.mb-3
+            %span.i.fa.fa-star-o#star
+            %span.i.fa.fa-star-o#star
+            %span.i.fa.fa-star-o#star
+            %span.i.fa.fa-star-o#star
+            %span.i.fa.fa-star-o#star
+          
+          .rating-value-display.ml-3 
+          %span#rating-value-display 0/5
+        
+        = f.hidden_field :post_id, value: @post.id
+        = f.hidden_field :score, id: 'rating-value'
+        = text_field :content, class: 'textarea'
+        = f.submit '保存', class: 'button mt-3'
+        = link_to '他のユーザーのレビューを見る', post_reviews_path(@post)
+        
 = link_to new_post_path do
   .float_btn
     %i.fa-2x.fa.fa-pencil-square-o{"aria-hidden" => "true"}
