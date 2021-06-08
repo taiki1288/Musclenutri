@@ -48,8 +48,6 @@
               = link_to post_path(post), class: 'post-link' do
                 = image_tag post.image, class: 'card-img-top'
                 %p.post-title.text-center.no-underline= "商品名: #{post.name}"
-                %p.product-price.text-center.no-underline= "購入価格: #{post.price}円"
-                %p.card-text.text-center.no-underline= "感想: #{post.content}"
 
                 = image_tag post.user.avatar_image, class: 'avatar-image'
                 .review-name.mt-1
