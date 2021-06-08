@@ -16,4 +16,6 @@
 #  index_reviews_on_user_id  (user_id)
 #
 class Review < ApplicationRecord
+    belongs_to :user
+    belongs_to :post
 end
