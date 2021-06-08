@@ -45,4 +45,30 @@
     cursor: pointer;
 }
 
+.review-btn {
+    width: 40%;
+    height: 50px;
+    background-color: pink;
+    color: white;
+    border: pink;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.review-button2 {
+    width: 40%;
+    height: 50px;
+    background-color: rgb(231, 62, 62);
+    color: white;
+    border: pink;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+
+    a {
+        text-decoration: none;
+        
+    }
+}
 

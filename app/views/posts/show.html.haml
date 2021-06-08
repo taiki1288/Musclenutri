@@ -11,7 +11,7 @@
     
     %p.text-center.mb-3 レビューを投稿
 
-    .rating-box.mt-3
+    .rating-box.mt-3.text-center
       = form_with(model: @review, url: post_reviews_path(@post), method: 'post', local: true) do |f|
         .main-rating.text-center
           .reviews.mb-3
@@ -22,13 +22,16 @@
             %span.i.fa.fa-star-o#star
           
           .rating-value-display.ml-3 
-          %span#rating-value-display 0/5
-        
-        = f.hidden_field :post_id, value: @post.id
-        = f.hidden_field :score, id: 'rating-value'
-        = text_field :content, class: 'textarea'
-        = f.submit '保存', class: 'button mt-3'
-        = link_to '他のユーザーのレビューを見る', post_reviews_path(@post)
+            %span#rating-value-display
+        .review-hidden-field
+          = f.hidden_field :post_id, value: @post.id
+        .score-hidden-field
+          = f.hidden_field :score, id: 'rating-value'
+        .textarea-review
+          = f.text_area :content, placeholder: '(例) 口コミ通りこのプロテインはとても味がよく飲みやすかったので、リピートします！'
+        .review-button
+          = f.submit 'レビューする', class: 'review-btn mt-3 mb-4'
+        = button_to '他のユーザーのレビューを見る', post_reviews_path(@post), class: "review-button2"
         
 = link_to new_post_path do
   .float_btn
