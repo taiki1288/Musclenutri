@@ -1,21 +1,21 @@
 # == Schema Information
 #
-# Table name: posts
+# Table name: reviews
 #
 #  id         :bigint           not null, primary key
 #  content    :text(65535)      not null
-#  name       :string(255)      not null
-#  price      :integer
+#  score      :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  post_id    :bigint           not null
 #  user_id    :bigint           not null
 #
 # Indexes
 #
-#  index_posts_on_user_id  (user_id)
+#  index_reviews_on_post_id  (post_id)
+#  index_reviews_on_user_id  (user_id)
 #
-class Post < ApplicationRecord
-    has_one_attached :image
+class Review < ApplicationRecord
     belongs_to :user
-    has_many :reviews, dependent: :destroy
+    belongs_to :post
 end

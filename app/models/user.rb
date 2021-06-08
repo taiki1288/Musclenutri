@@ -26,6 +26,7 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
   has_many :posts, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   def display_name
     profile&.nickname || self.username
