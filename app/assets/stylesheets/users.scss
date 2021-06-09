@@ -1,0 +1,37 @@
+.userlist-card {
+    width: 90%;
+    padding: 1.25rem;
+    padding: 24px;
+    box-shadow: 0px 0px 8px #000;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.userlist-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin-right: 20px;
+}
+
+
+.no-underline {
+  text-decoration: none !important;
+  color: black;
+}
+
+.no-underline:hover {
+    color: black;
+}
+
+ul {
+    list-style: none;
+  }
+  
+.users-list {
+    display: flex;
+}

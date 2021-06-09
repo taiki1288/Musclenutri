@@ -1,0 +1,28 @@
+.container
+  .profile-card-body.text-center
+    %h5.card-title.pt-3.mb-4 プロフィール
+    = image_tag @user.avatar_image , class: 'profile-image mb-3'
+    %p.fs-4.mb-4.fw-bold= @user.display_name
+    
+    .profilePage_user_have
+      .profilePage_user_have_item
+        %p.title.mb-1 フォロー
+        %p.count 100人
+      .profilePage_user_have_item.mb-3
+        %p.title.mb-1 フォロワー
+        %p.count 100人
+    .profile-introduction.mb-5 
+      %p.introduction 自己紹介
+      %p.introduction-content
+        = @user.profile&.introduction
+
+  = link_to new_post_path do
+    .float_btn
+      %i.fa-2x.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+    
+        
+      
+
+      
+        
+        
