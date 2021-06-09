@@ -15,15 +15,11 @@
                 = @post.avg_score
                 点（#{@post.reviews.count}件のレビュー）
         %table.table.is-fullwidth.has-text-centered.mt-3
-          %thead
-            %tr
-              %th ユーザー
-              %th 点数
-              %th 内容
+          
           %tbody
             - @reviews.each do |review|
               %tr
                 %td= image_tag review.user.avatar_image, class: 'review-avatar-image'
                 %td= review.user.username
-                %td= review.score
+                %td= "#{review.score}pt"
                 %td= review.content
