@@ -1,0 +1,9 @@
+.container 
+  .userlist-card
+    %h4.text-center.fw-bold ユーザー一覧
+    - @users.each do |user|
+      %ul
+      = link_to user_path(user), class: 'no-underline' do
+        %li.users-list
+          %p= image_tag user.avatar_image, class: 'userlist-avatar'
+          %p= user.username
