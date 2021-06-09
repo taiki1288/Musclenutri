@@ -16,6 +16,7 @@
 #
 class Post < ApplicationRecord
     has_one_attached :image
+    has_one_attached :avatar
     belongs_to :user
     has_many :reviews, dependent: :destroy
 
@@ -33,5 +34,5 @@ class Post < ApplicationRecord
         else
           0.0
         end
-      end
+    end
 end
