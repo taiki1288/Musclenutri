@@ -1,0 +1,25 @@
+.container
+  .post-card-body-show
+    .columns.is-centered
+      .column
+        .card
+          %header.card-header
+            %p.card-header-title.text-white.fw-bold
+              = @post.name
+          .card-content
+            .content.average-score
+              .star-rating
+                .star-rating-front{:style => "width: #{@post.review_score_percentage}%"} ★★★★★
+                .star-rating-back ★★★★★
+              .average-score-display.ml-3.pt-2
+                = @post.avg_score
+                点（#{@post.reviews.count}件のレビュー）
+        %table.table.is-fullwidth.has-text-centered.mt-3
+          
+          %tbody
+            - @reviews.each do |review|
+              %tr
+                %td= image_tag review.user.avatar_image, class: 'review-avatar-image'
+                %td= review.user.username
+                %td= "#{review.score}pt"
+                %td= review.content

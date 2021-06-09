@@ -5,24 +5,26 @@
     %p.product-price.text-center.no-underline= "購入価格: #{@post.price}円"
     %p.card-text.text-center.no-underline= "感想: #{@post.content}"
 
-    = image_tag @post.user.avatar_image, class: 'avatar-image'
-    .review-name.mt-1
-      %p.text-left.no-underline= @post.user.profile.nickname
+    .post-avatar-name.text-center
+      = image_tag @post.user.avatar_image, class: 'avatar-image mb-2'
+      .review-name.mt-1.text-center.mb-2
+        %p.text-left.no-underline= @post.user.profile.nickname
     
     %p.text-center.mb-3 レビューを投稿
 
     .rating-box.mt-3.text-center
       = form_with(model: @review, url: post_reviews_path(@post), method: 'post', local: true) do |f|
         .main-rating.text-center
-          .reviews.mb-3
+          .ratings
             %span.i.fa.fa-star-o#star
             %span.i.fa.fa-star-o#star
             %span.i.fa.fa-star-o#star
             %span.i.fa.fa-star-o#star
             %span.i.fa.fa-star-o#star
           
-          .rating-value-display.ml-3 
-            %span#rating-value-display
+          .ml-3.rating-value-display.mb-3
+            %span#rating-value-display> 0
+            \/5 
         .review-hidden-field
           = f.hidden_field :post_id, value: @post.id
         .score-hidden-field
@@ -31,7 +33,7 @@
           = f.text_area :content, placeholder: '(例) 口コミ通りこのプロテインはとても味がよく飲みやすかったので、リピートします！'
         .review-button
           = f.submit 'レビューする', class: 'review-btn mt-3 mb-4'
-        = button_to '他のユーザーのレビューを見る', post_reviews_path(@post), class: "review-button2"
+        = button_to 'レビューを見る', post_reviews_path(@post), class: "review-button2"
         
 = link_to new_post_path do
   .float_btn
@@ -40,3 +42,5 @@
 %footer.footer.mt-5
   .container
     %p.text-muted.text-center ©︎ Copyright 2021 MuscleNutri
+
+= javascript_pack_tag 'review.js'
