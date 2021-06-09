@@ -33,7 +33,7 @@
           = f.text_area :content, placeholder: '(例) 口コミ通りこのプロテインはとても味がよく飲みやすかったので、リピートします！'
         .review-button
           = f.submit 'レビューする', class: 'review-btn mt-3 mb-4'
-        = button_to '他のユーザーのレビューを見る', post_reviews_path(@post), class: "review-button2"
+        = button_to 'レビューを見る', post_reviews_path(@post), class: "review-button2"
         
 = link_to new_post_path do
   .float_btn
