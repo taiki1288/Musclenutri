@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: 'posts#index'
 
   resources :users, only: [:index, :show]
+  get 'search' => 'users#search'
 
   resources :posts do
     resources :reviews, only: [:index, :create]

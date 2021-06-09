@@ -31,7 +31,20 @@
 ul {
     list-style: none;
   }
-  
-.users-list {
+
+.users-list-item {
     display: flex;
+}
+
+.search-field {
+    width: 80%;
+    height: 40px;
+}
+
+.search-btn {
+    width: 70px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: pink;
+    color: white;
 }
