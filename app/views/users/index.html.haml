@@ -1,9 +1,20 @@
 .container 
   .userlist-card
-    %h4.text-center.fw-bold ユーザー一覧
-    - @users.each do |user|
-      %ul
-      = link_to user_path(user), class: 'no-underline' do
-        %li.users-list
-          %p= image_tag user.avatar_image, class: 'userlist-avatar'
-          %p= user.username
+    %h4.text-center.fw-bold.mb-4 ユーザー一覧
+    .search-form.text-center.mb-5
+      = form_with url: search_path, method: :get, local: true do |f|
+        = f.text_field :keyword, value: @keyword, placeholder: '(例) ユーザーネーム',  class: 'search-field'
+        = f.submit "検索", class: 'search-btn'
+    
+      - if @users.present?
+      
+      - else
+        %p.text-center.mt-5 該当するユーザーはいません
+        
+    .users-list
+      - @users.each do |user|
+        %ul
+        = link_to user_path(user), class: 'no-underline' do
+          %li.users-list-item
+            %p= image_tag user.avatar_image, class: 'userlist-avatar'
+            %p= user.username

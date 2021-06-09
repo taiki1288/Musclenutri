@@ -50,4 +50,8 @@ class User < ApplicationRecord
       user.username = 'guest'
     end
   end
+
+  def self.search(keyword)
+    where(["username like?", "%#{keyword}%"])
+  end
 end
