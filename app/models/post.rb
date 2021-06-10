@@ -19,6 +19,8 @@ class Post < ApplicationRecord
     has_one_attached :avatar
     belongs_to :user
     has_many :reviews, dependent: :destroy
+    has_many :likes, dependent: :destroy
+
 
     def avg_score
         unless self.reviews.empty?
@@ -35,4 +37,13 @@ class Post < ApplicationRecord
           0.0
         end
     end
+
+    def liked_by?(user)
+        likes.where(likes: { user_id: user }).last
+    end
+
+    def liked_by?
+        like_by(user).present?
+    end
+    
 end
