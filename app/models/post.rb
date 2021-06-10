@@ -38,12 +38,11 @@ class Post < ApplicationRecord
         end
     end
 
-    def liked_by?(user)
+    def like_by(user)
         likes.where(likes: { user_id: user }).last
     end
-
-    def liked_by?
+    
+    def liked_by?(user)
         like_by(user).present?
     end
-    
 end
