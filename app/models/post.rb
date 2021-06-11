@@ -20,6 +20,8 @@ class Post < ApplicationRecord
     belongs_to :user
     has_many :reviews, dependent: :destroy
     has_many :likes, dependent: :destroy
+    has_many :tags, through: :tag_relationships
+    has_many :tag_relationships, dependent: :destroy
 
 
     def avg_score
