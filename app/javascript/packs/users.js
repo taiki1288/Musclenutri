@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('turbolinks:load', function() {
   const tabs = document.getElementsByClassName('tabs_item');
   for(let i = 0; i < tabs.length; i++) {
     tabs[i].addEventListener('click', tabSwitch);
