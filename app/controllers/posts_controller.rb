@@ -16,8 +16,9 @@ class PostsController < ApplicationController
 
     def create
         @post = current_user.posts.build(post_params)
-        # binding.pry
+        tag_list = params[:post][tag_ids].split(',')
         if @post.save!
+          @post.save_tags(tag_list)
           redirect_to root_path, notice: '投稿が完了しました。'
         else
           render :new, notice: '投稿に失敗しました。'
