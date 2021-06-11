@@ -17,6 +17,10 @@
       %div.text-center.mb-5
         = f.number_field :price, step: '0.1', placeholder: '¥0', class: 'price-area'
       %div.text-center.mb-3
+        %p.form-title #タグ（任意）※半角スペース区切りでタグ付けできます
+      %div.text-center.mb-5
+        = f.text_field :tag_name, placeholder: "タグをつけてください。複数つけるには','で区切ってください。", class: 'tag-area'
+      %div.text-center.mb-3
         = f.label :content, '内容', class: 'new-post-font'
       %div.text-center.mb-5
         = f.text_area :content, placeholder: '(例) このプロテインはとても飲みやすくて粉も溶けやすいのでいいです！', class: 'content-area'
