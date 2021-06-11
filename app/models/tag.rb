@@ -12,4 +12,7 @@
 #  index_tags_on_tag_name  (tag_name) UNIQUE
 #
 class Tag < ApplicationRecord
+    has_many :tag_relationships, dependent: :destroy
+    has_many :post, through: :tag_relationships
+    validates :tag_name, uniquness: true
 end
