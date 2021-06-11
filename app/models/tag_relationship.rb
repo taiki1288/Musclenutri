@@ -19,4 +19,6 @@
 #  fk_rails_...  (tag_id => tags.id)
 #
 class TagRelationship < ApplicationRecord
+    belongs_to :post
+    belongs_to :tag
 end
