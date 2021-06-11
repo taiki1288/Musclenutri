@@ -48,3 +48,18 @@ ul {
     background-color: pink;
     color: white;
 }
+
+
+.panel-group  {
+    font-size: 14px;
+    padding: 7px 10px;
+    line-height: 1.4;
+    background: #353d3e;
+    color: #fff;
+    min-height: 150px;
+    display: none;
+  }
+  
+.contents .is-show {
+    display: block;
+}
