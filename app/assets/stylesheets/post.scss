@@ -131,7 +131,6 @@ textarea::placeholder {
     color: #fafafa;
     box-shadow: 0px 0px 8px;
     padding-top: 10px;
-    color: black;
 }
 
 .avatar-image {
@@ -182,4 +181,22 @@ textarea::placeholder {
     img {
         margin-bottom: 5px;
     }
+}
+
+.tag-area {
+    width: 80%;
+    height: 40px;
+    border-width: 1px;
+    --border-opacity: 1;
+    border-color: #e2e8f0;
+    border-radius: 5px;
+    color: black;
+}
+
+.tag-area::placeholder {
+    font-size: 12px;
+}
+
+.form-title { 
+    color: gray;
 }

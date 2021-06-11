@@ -14,5 +14,4 @@
 class Tag < ApplicationRecord
     has_many :tag_relationships, dependent: :destroy
     has_many :post, through: :tag_relationships
-    validates :tag_name, uniquness: true
 end
