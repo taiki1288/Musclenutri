@@ -3,10 +3,12 @@
     = image_tag @post.image, class: 'card-img-top'
     %p.post-title.text-center.no-underline= "商品名: #{@post.name}"
     %p.product-price.text-center.no-underline= "購入価格: #{@post.price}円"
-    %p.card-text.text-center.no-underline= "感想: #{@post.content}"
-    %p.tag-list.text-center.no-underline
+    %p.card-text.text-center.no-underline.mb-4= "感想: #{@post.content}"
+
+    .tag-list.text-center.mb-3
       - @post_tags.each do |tag|
-        = link_to "##{tag.tag_name}", tag_posts_path(tag_id: tag.id), class: 'tag-name'
+        .tag-count
+          = link_to "##{tag.tag_name}", tag_posts_path(tag_id: tag.id)
 
     .post-avatar-name.text-center
       = image_tag @post.user.avatar_image, class: 'avatar-image mb-2'
