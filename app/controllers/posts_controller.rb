@@ -3,11 +3,13 @@ class PostsController < ApplicationController
 
     def index
         @posts = Post.all
+        @tag_list = Tag.all
     end
 
     def show
         @post = Post.find(params[:id])
         @review = Review.new
+        @post_tags = @post.tags
     end
 
     def new
@@ -16,7 +18,7 @@ class PostsController < ApplicationController
 
     def create
         @post = current_user.posts.build(post_params)
-        tag_list = params[:post][:tag_name].split(',')
+        tag_list = params[:post][:tag_name].split(nil)
         if @post.save!
           @post.save_tags(tag_list)
           redirect_to root_path, notice: '投稿が完了しました。'
@@ -42,6 +44,12 @@ class PostsController < ApplicationController
         post = current_user.posts.find(params[:id])
         post.destory!
         redirect_to root_path
+    end
+
+    def tags
+        @tag_list = Tag.all
+        @tag = Tag.find(params[:tag_id])
+        @posts = @tag.posts.all
     end
 
     private
