@@ -38,6 +38,13 @@
           %img.card-img-top{alt: "...", src: "/assets/eaa.jpeg"}
           %p.post-title.text-center EAA
           %p.card-text こちらはEAAのサプリになります。
+    
+    .post-card
+      .h2.tag-name.text-center 人気のタグ
+      %p.tag-list.text-center.no-underline 
+        - @tag_list.each do |list|
+          = link_to "##{list.tag_name}", tag_posts_path(tag_id: list.id), class: 'text-center'
+          %p.text-center="(#{list.posts.count})"
 
     %h2.text-center.mb-5 口コミされたプロテインとサプリ
     .post-card

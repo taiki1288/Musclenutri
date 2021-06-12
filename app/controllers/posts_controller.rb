@@ -46,6 +46,12 @@ class PostsController < ApplicationController
         redirect_to root_path
     end
 
+    def tags
+        @tag_list = Tag.all
+        @tag = Tag.find(params[:tag_id])
+        @posts = @tag.posts.all
+    end
+
     private
     def post_params
         params.require(:post).permit(:name, :content, :price, :image).merge(user_id: current_user.id)
