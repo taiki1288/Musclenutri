@@ -44,14 +44,15 @@
     -#     = f.text_field :keyword, value: @keyword
     -#     = f.submit "検索"                              
     
-    .post-card           
+    .post-card        
       .h2.post-tag-title.text-center.mb-4 人気のタグ
-      %p.tag-list.text-center.no-underline 
+      .tag-list.text-center.no-underline.mb-5
         - @tag_ranks.each.with_index(1) do |list,i|
           .tag-count
             = link_to "##{list.tag_name}", tag_posts_path(tag_id: list.id), class: 'text-center tag-name mb-5'
             %span.tag-count-item= "#{list.posts.count}"
-    %h2.text-center.mb-5 口コミされたプロテインとサプリ
+
+    %h2.text-center.mb-3 口コミされたプロテインとサプリ
     .post-card
       .row
         - @posts.each do |post|
