@@ -29,4 +29,5 @@ Rails.application.routes.draw do
     get 'posts', to: 'posts#tags'
   end
 
+  get 'goods/search'
 end
