@@ -47,9 +47,10 @@
     .post-card           
       .h2.post-tag-title.text-center.mb-4 人気のタグ
       %p.tag-list.text-center.no-underline 
-        - @tag_list.each do |list|
-          = link_to "##{list.tag_name}", tag_posts_path(tag_id: list.id), class: 'text-center tag-name mb-5'
-
+        - @tag_ranks.each.with_index(1) do |list,i|
+          .tag-count
+            = link_to "##{list.tag_name}", tag_posts_path(tag_id: list.id), class: 'text-center tag-name mb-5'
+            %span.tag-count-item= "#{list.posts.count}"
     %h2.text-center.mb-5 口コミされたプロテインとサプリ
     .post-card
       .row
