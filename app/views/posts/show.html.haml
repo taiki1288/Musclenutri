@@ -6,7 +6,7 @@
     %p.card-text.text-center.no-underline= "感想: #{@post.content}"
     %p.tag-list.text-center.no-underline
       - @post_tags.each do |tag|
-        = link_to "##{tag.tag_name}", edit_post_path(tag_id: tag.id) 
+        = link_to "##{tag.tag_name}", tag_posts_path(tag_id: tag.id), class: 'tag-name'
 
     .post-avatar-name.text-center
       = image_tag @post.user.avatar_image, class: 'avatar-image mb-2'

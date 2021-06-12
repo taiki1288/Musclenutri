@@ -38,13 +38,17 @@
           %img.card-img-top{alt: "...", src: "/assets/eaa.jpeg"}
           %p.post-title.text-center EAA
           %p.card-text こちらはEAAのサプリになります。
+  
+    -# .search-form
+    -#   = form_with url: root_path, method: :get, local: true do |f|
+    -#     = f.text_field :keyword, value: @keyword
+    -#     = f.submit "検索"                              
     
-    .post-card
-      .h2.tag-name.text-center 人気のタグ
+    .post-card           
+      .h2.post-tag-title.text-center.mb-4 人気のタグ
       %p.tag-list.text-center.no-underline 
         - @tag_list.each do |list|
-          = link_to "##{list.tag_name}", tag_posts_path(tag_id: list.id), class: 'text-center'
-          %p.text-center="(#{list.posts.count})"
+          = link_to "##{list.tag_name}", tag_posts_path(tag_id: list.id), class: 'text-center tag-name mb-5'
 
     %h2.text-center.mb-5 口コミされたプロテインとサプリ
     .post-card
