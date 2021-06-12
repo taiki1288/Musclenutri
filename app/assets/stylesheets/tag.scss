@@ -10,20 +10,37 @@
     padding-top: 10px;
 }
 
-.tag-name {
+.tag-count {
     display: inline-block;
     margin: 0 .1em .6em 0;
     padding: .6em;
     line-height: 1;
-    text-decoration: none;
     color: rgba(0,0,0,0.6);
     background-color: #e4e4e4;
     border: 1px solid black;
     border-radius: 2em;
+    color: white;
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover {
+        color: white;
+    }
 }
 
-.tag-name:hover {
+.tag-count:hover {
     background-color: skyblue;
-    color: #fafafa;
     cursor: pointer;
+}
+
+.tag-count-item {
+    color: #fafafa;
+    background: #242424;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+    pointer-events: none;
 }

@@ -4,6 +4,7 @@ class PostsController < ApplicationController
     def index
         @posts = Post.all
         @tag_list = Tag.all
+        @tag_ranks = Tag.find(TagRelationship.group(:tag_id).order(Arel.sql('count(tag_id)desc')).limit(20).pluck(:tag_id))
     end
 
     def show
