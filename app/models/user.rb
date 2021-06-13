@@ -27,6 +27,8 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :following_relationships, foreign_key: 'follower_id', class_name: 'Relationship', dependent: :destroy
+  has_many :followings, through: :following_relationships, source: :following
 
   def display_name
     profile&.nickname || self.username
@@ -53,5 +55,9 @@ class User < ApplicationRecord
 
   def self.search(keyword)
     where(["username like?", "%#{keyword}%"])
+  end
+
+  def follow!(user)
+    following_relationships.create!(following_id: user.id)
   end
 end
