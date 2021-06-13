@@ -27,6 +27,7 @@ gem 'binding_of_caller'
 gem 'devise'
 gem 'hamlit'
 gem 'rakuten_web_service'
+gem 'dotenv-rails'
 # gem 'font-awesome-sass'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
