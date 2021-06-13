@@ -1,0 +1,29 @@
+.container
+  .search-list
+    %h5.product-search.text-center.fw-bold.mb-4 プロテインやサプリを検索してみよう！！
+    .rakuten-search-box.text-center
+      = form_with url: goods_search_path, method: :get, local: true do |f|
+        = f.text_field 'keyword', placeholder: "検索ワードを入力...", class: "rakuten-search-form text-center"
+        = f.submit "検索", class: "rakuten-search-btn"
+    .alert
+      = flash[:danger]
+    .rakuten-items
+      - if @items.present?
+        - @items.each do |item|
+          = link_to "#{item.url}", class: 'no-underline' do
+            %section.item-detail
+              .item-images
+                = image_tag item["mediumImageUrls"][0], class: "item-image"
+              .item-descriptions
+                %p.item-name.fw-bold= item.name
+                %p.item-price.fw-bold
+                  = item.price
+                  円
+                %p.rakuten-detail.no-underline.fw-bold.text-right
+                  ☆楽天レビュー平均：#{item['reviewAverage']}点
+      - else
+        %p.text-center 該当する商品はありません
+
+%footer.footer.mt-5
+  .container
+    %p.text-muted.text-center ©︎ Copyright 2021 MuscleNutri
