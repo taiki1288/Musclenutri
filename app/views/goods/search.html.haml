@@ -1,9 +1,9 @@
 .container
-  .search-list
+  .search-list.mt-5
     %h5.product-search.text-center.fw-bold.mb-4 プロテインやサプリを検索してみよう！！
     .rakuten-search-box.text-center
       = form_with url: goods_search_path, method: :get, local: true do |f|
-        = f.text_field 'keyword', placeholder: "検索ワードを入力...", class: "rakuten-search-form text-center"
+        = f.text_field 'keyword', placeholder: "検索ワードを入力してください...", class: "rakuten-search-form"
         = f.submit "検索", class: "rakuten-search-btn"
     .alert
       = flash[:danger]
@@ -24,6 +24,11 @@
       - else
         %p.text-center 該当する商品はありません
 
-%footer.footer.mt-5
-  .container
-    %p.text-muted.text-center ©︎ Copyright 2021 MuscleNutri
+  = link_to new_post_path do
+    .float_btn
+      %i.fa-2x.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+
+-# %footer.footer.mt-5
+-#   .container
+-#     %p.text-muted.text-center ©︎ Copyright 2021 MuscleNutri
+
