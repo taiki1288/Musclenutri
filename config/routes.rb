@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'posts#index'
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do
+    resources :follows, only: [:show, :create]
+    resources :unfollows, only: [:show, :create]
+  end
+
   get 'search' => 'users#search'
 
   resources :posts do
