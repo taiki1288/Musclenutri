@@ -69,3 +69,27 @@
     box-shadow: 0px 0px 5px #000;
 }
 
+.follow-btn {
+    width: 85px;
+    height: 35px;
+    // background-color: skyblue;
+    border: 1px solid ;
+    padding-top: 8px;
+    border-radius: 20px;
+    color: skyblue;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 0 auto;
+}
+
+.unfollow-btn {
+    width: 85px;
+    height: 35px;
+    background-color: skyblue;
+    padding-top: 10px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 11px;
+    margin: 0 auto;
+}
