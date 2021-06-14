@@ -4,22 +4,16 @@
     = image_tag @user.avatar_image , class: 'profile-image mb-3'
     %p.fs-4.mb-4.fw-bold= @user.display_name
     
-    .profilePage_user_have
-      -# .profilePage_user_have_item
-      -#   %p.title.mb-1 フォロー
-      -#   %p.count 100人
-      -# .profilePage_user_have_item.mb-3
-      -#   %p.title.mb-1 フォロワー
-      -#   %p.count 100人
-      .profilePage_follow_btn
-        .follow-btn.hidden
-          %p Follow
-        .unfollow-btn.hidden
-          %p Unfollow
-    .profile-introduction.mb-5 
-      %p.introduction 自己紹介
-      %p.introduction-content
-        = @user.profile&.introduction
+    .profilePage_user_have.text-center
+      .profilePage_user_have_item.mb-4
+        .follow-btn.hidden.fw-bold.text-center
+          %p フォローする
+        .unfollow-btn.hidden.fw-bold.text-center
+          %p フォローを外す
+      .profile-introduction.mb-5 
+        %p.introduction 自己紹介
+        %p.introduction-content
+          = @user.profile&.introduction
 
   %ul.tabs
     %li.tabs_item.fw-bold.active
