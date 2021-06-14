@@ -1,16 +1,21 @@
-.container
+.container#user-show{ data: { user_id: @user.id, following_id: current_user.id}}
   .profile-card-body.text-center
     %h5.card-title.pt-3.mb-4 プロフィール
     = image_tag @user.avatar_image , class: 'profile-image mb-3'
     %p.fs-4.mb-4.fw-bold= @user.display_name
     
     .profilePage_user_have
-      .profilePage_user_have_item
-        %p.title.mb-1 フォロー
-        %p.count 100人
-      .profilePage_user_have_item.mb-3
-        %p.title.mb-1 フォロワー
-        %p.count 100人
+      -# .profilePage_user_have_item
+      -#   %p.title.mb-1 フォロー
+      -#   %p.count 100人
+      -# .profilePage_user_have_item.mb-3
+      -#   %p.title.mb-1 フォロワー
+      -#   %p.count 100人
+      .profilePage_follow_btn
+        .follow-btn.hidden
+          %p Follow
+        .unfollow-btn.hidden
+          %p Unfollow
     .profile-introduction.mb-5 
       %p.introduction 自己紹介
       %p.introduction-content
@@ -55,6 +60,7 @@
   .container
     %p.text-muted.text-center ©︎ Copyright 2021 MuscleNutri
     
+= javascript_pack_tag 'relation.js'
 = javascript_pack_tag 'users.js'
     
         

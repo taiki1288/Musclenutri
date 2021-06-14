@@ -9,7 +9,9 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap';
 import '../stylesheets/application';
+import $ from 'jquery'
+import axios from 'axios'
 
 Rails.start()
-Turbolinks.start()
+// Turbolinks.start()
 ActiveStorage.start()
