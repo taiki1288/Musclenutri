@@ -5,6 +5,10 @@
     %p.fs-4.mb-4.fw-bold= @user.display_name
     
     .profilePage_user_have.text-center
+      .profilePage_user_have_item
+        %p#follower-count= @user.followers.count
+      .profilePage_user_have_item
+        %p#follower-count= @user.followings.count
       .profilePage_user_have_item.mb-4
         .follow-btn.hidden.fw-bold.text-center
           %p フォローする
