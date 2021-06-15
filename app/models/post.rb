@@ -60,4 +60,9 @@ class Post < ApplicationRecord
             self.tags << new_post_tag
         end
     end
+
+    def like_counts(post)
+       likes.count
+    end
+    
 end
