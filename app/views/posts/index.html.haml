@@ -18,7 +18,7 @@
 
   .post-card
     .row
-      - @post_ranks.each.with_index(1) do |post, i|
+      - @review_ranks.each.with_index(1) do |post, i|
         .col-sm.d-flex
           .card-body 
             = link_to post_path(post), class: 'post-link' do
