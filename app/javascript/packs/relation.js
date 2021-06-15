@@ -17,19 +17,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const userId = dataset.userId
     const followId = dataset.followingId
 
-    axios.get(`/users/${userId}`)
+    axios.get(`/users/${userId}/follows/${followId}`)
       .then((response) => {
-        // debugger
           const hasFollowed = response.data.hasFollowed
+          const followerCount = response.data.followerCounts
+          const followingCount = response.data.followingCounts
+          $('#follower-count').text(followerCount)
+          $('#following-count').text(followingCount)
           followDisplay(hasFollowed)
       })
 
     $('.follow-btn').on('click', () => {
         axios.post(`/users/${userId}/follows`)
         .then((response) => {
+          const followerCount = response.data.followerCounts
+          const followingCount = response.data.followingCounts
             if (response.data.status === 'ok') {
                 $('.unfollow-btn').removeClass('hidden')
                 $('.follow-btn').addClass('hidden')
+                $('#follower-count').text(followerCount)
+                $('#following-count').text(followingCount)
             }
         })
         .catch((e) => {
@@ -41,9 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
     $('.unfollow-btn').on('click', () => {
         axios.post(`/users/${userId}/unfollows`)
         .then((response) => {
+          const followerCount = response.data.followerCounts
+          const followingCount = response.data.followingCounts
             if (response.data.status === 'ok') {
                 $('.unfollow-btn').addClass('hidden')
                 $('.follow-btn').removeClass('hidden')
+                $('#follower-count').text(followerCount)
+                $('#following-count').text(followingCount)
             }
         })
         .catch((e) => {

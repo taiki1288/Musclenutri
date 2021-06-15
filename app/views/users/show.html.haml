@@ -6,9 +6,9 @@
     
     .profilePage_user_have.text-center
       .profilePage_user_have_item
-        %p.follower-count= @user.followers.count
+        %p#follower-count= @user.followers.count
       .profilePage_user_have_item
-        %p.follower-count= @user.followings.count
+        %p#follower-count= @user.followings.count
       .profilePage_user_have_item.mb-4
         .follow-btn.hidden.fw-bold.text-center
           %p フォローする
