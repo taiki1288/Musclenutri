@@ -17,6 +17,6 @@ class Like < ApplicationRecord
     belongs_to :post
     belongs_to :user
 
-    LIKED_COLOR = '#ff3366'.freeze
-    UNLIKED_COLOR = '#A0A0A0'.freeze
+    # LIKED_COLOR = '#ff3366'.freeze
+    # UNLIKED_COLOR = '#A0A0A0'.freeze
 end
