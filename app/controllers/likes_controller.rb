@@ -1,8 +1,9 @@
 class LikesController < ApplicationController
     before_action :authenticate_user!
+    skip_before_action :verify_authenticity_token
 
     def show
-        post = Post.params[:post_id]
+        post = Post.find(params[:post_id])
         like_status = current_user.has_liked?(post)
         render json: { hasLiked: like_status }
     end
