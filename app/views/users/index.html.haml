@@ -1,6 +1,6 @@
 .container 
   .userlist-card
-    %h4.text-center.fw-bold.mb-4 ユーザー一覧
+    %h4.user-list-name.text-center.fw-bold.mb-4 ユーザー一覧
     .search-form.text-center.mb-5
       = form_with url: search_path, method: :get, remote: true do |f|
         = f.text_field :keyword, value: @keyword, placeholder: '(例) ユーザーネーム',  class: 'search-field'
