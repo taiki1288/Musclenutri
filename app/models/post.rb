@@ -69,4 +69,8 @@ class Post < ApplicationRecord
       Post.find(Like.group(:post_id).order('count(post_id) desc').limit(4).pluck(:post_id))
     end
 
+    def self.create_review_ranks
+      Post.find(Review.group(:post_id).order('avg(score) desc').limit(4).pluck(:post_id))
+    end
+
 end
