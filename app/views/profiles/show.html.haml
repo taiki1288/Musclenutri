@@ -6,11 +6,16 @@
     
     .profilePage_user_have
       .profilePage_user_have_item
-        %p.title.mb-1 フォロー
-        %p.count 100人
-      .profilePage_user_have_item.mb-3
-        %p.title.mb-1 フォロワー
-        %p.count 100人
+        #follower
+          フォロワー
+          %span#follower-count= current_user.followers.count
+          人
+      .profile-vertical-line 
+      .profilePage_user_have_item
+        #follow
+          フォロー
+          %span#following-count= current_user.followings.count
+          人
     .profile-introduction.mb-5 
       %p.introduction 自己紹介
       %p.introduction-content

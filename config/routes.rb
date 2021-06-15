@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :reviews, only: [:index, :create]
+    resource :like, only: [:show, :create, :destroy]
   end
 
   devise_scope :user do
