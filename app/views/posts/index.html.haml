@@ -18,31 +18,12 @@
 
   .post-card
     .row
-      .col-sm.d-flex
-        .card-body 
-          %img.card-img-top{alt: "...", src: "/assets/dns.jpeg"}
-          %p.post-title.text-center DNS SP
-          %p.card-text こちらのプロテインはDNSのSPになります。
-      .col-sm.d-flex
-        .card-body 
-          %img.card-img-top{alt: "...", src: "/assets/bcaa.jpeg"}
-          %p.post-title.text-center BCAA XTEND
-          %p.card-text こちらはBCAAのXTENDになります。
-      .col-sm.d-flex
-        .card-body 
-          %img.card-img-top{alt: "...", src: "/assets/dns2.jpeg"}
-          %p.post-title.text-center DNS SP チョコレート味
-          %p.card-text DNSのSPのチョコレート味になります。
-      .col-sm.d-flex
-        .card-body 
-          %img.card-img-top{alt: "...", src: "/assets/eaa.jpeg"}
-          %p.post-title.text-center EAA
-          %p.card-text こちらはEAAのサプリになります。
-  
-    -# .search-form
-    -#   = form_with url: root_path, method: :get, local: true do |f|
-    -#     = f.text_field :keyword, value: @keyword
-    -#     = f.submit "検索"                              
+      - @post_ranks.each.with_index(1) do |post, i|
+        .col-sm.d-flex
+          .card-body 
+            = link_to post_path(post), class: 'post-link' do
+              = image_tag post.image, class: 'card-img-top'
+              %p.post-title.text-center.no-underline.mb-3= "商品名: #{post.name}"                         
     
     .post-card        
       .h2.post-tag-title.text-center.mb-4 人気のタグ
