@@ -1,5 +1,5 @@
 .container
-  .post-card-body-show.mt-5
+  .post-card-body-show.mt-5#post-show{data: {post_id: @post.id}}
     = image_tag @post.image, class: 'card-img-top'
     %p.post-title.text-center.no-underline= "商品名: #{@post.name}"
     %p.product-price.text-center.no-underline= "購入価格: #{@post.price}円"
@@ -9,6 +9,15 @@
       - @post_tags.each do |tag|
         .tag-count
           = link_to "##{tag.tag_name}", tag_posts_path(tag_id: tag.id)
+
+    - if user_signed_in?
+      .post-heart-btn
+        .post-heart.active-heart.hidden{id: @post.id}
+          = image_tag 'heart.svg', class: 'like-btn'
+        .post-heart.inactive-heart.hidden{id: @post.id}
+          = image_tag 'inactive-heart.svg', class: 'like-btn'
+        .like-count 
+          %p= @post.likes.count
 
     .post-avatar-name.text-center
       = image_tag @post.user.avatar_image, class: 'avatar-image mb-2'
@@ -49,4 +58,5 @@
   .container
     %p.text-muted.text-center ©︎ Copyright 2021 MuscleNutri
 
+= javascript_pack_tag 'like.js'
 = javascript_pack_tag 'review.js'
