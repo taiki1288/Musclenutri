@@ -16,15 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
     axios.get(`/posts/${postId}/like`)
         .then((response) => {
             const hasLiked = response.data.hasLiked
+            const likeCount = response.data.likeCounts
+            $('.like-count').text(likeCount)
             handleHeartDisplay(hasLiked)
         })
 
     $('.inactive-heart').on('click', () => {
         axios.post(`/posts/${postId}/like`)
           .then((response) => {
+            const likeCount = response.data.likeCounts  
             if (response.data.status === 'ok') {
                 $('.active-heart').removeClass('hidden')
                 $('.inactive-heart').addClass('hidden')
+                $('.like-count').text(likeCount)
             }
           })
           .catch((e) => {
@@ -36,9 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
     $('.active-heart').on('click', () => {
         axios.delete(`/posts/${postId}/like`)
           .then((response) => {
+            const likeCount = response.data.likeCounts
               if (response.data.status === 'ok') {
                   $('.active-heart').addClass('hidden')
                   $('.inactive-heart').removeClass('hidden')
+                  $('.like-count').text(likeCount)
               }
           })
           .catch((e) => {
