@@ -83,6 +83,10 @@ class User < ApplicationRecord
     user.followings.count
   end
 
+  def has_liked?(post)
+    likes.exists?(post_id: post.id)
+  end
+
   private
   def get_user_id(user)
     if user.is_a?(User)
