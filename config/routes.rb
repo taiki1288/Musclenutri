@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
   get 'goods/search'
   
-  resources :rooms, only: [:index, :create:, :show]
+  resources :rooms, only: [:index, :create, :show]
   resources :messages, only: [:create, :edit, :update, :destroy]
 
 end
