@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_13_091010) do
+ActiveRecord::Schema.define(version: 2021_06_16_025550) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(version: 2021_06_13_091010) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "entries", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "room_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_entries_on_room_id"
+    t.index ["user_id"], name: "index_entries_on_user_id"
+  end
+
   create_table "likes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "post_id", null: false
@@ -47,6 +56,16 @@ ActiveRecord::Schema.define(version: 2021_06_13_091010) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_likes_on_post_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "messages", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "room_id"
+    t.text "message", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_messages_on_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -88,6 +107,11 @@ ActiveRecord::Schema.define(version: 2021_06_13_091010) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "rooms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "tag_relationships", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "tag_id", null: false
@@ -120,6 +144,10 @@ ActiveRecord::Schema.define(version: 2021_06_13_091010) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "entries", "rooms"
+  add_foreign_key "entries", "users"
+  add_foreign_key "messages", "rooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "relationships", "users", column: "follower_id"
   add_foreign_key "relationships", "users", column: "following_id"
   add_foreign_key "tag_relationships", "posts"
