@@ -19,4 +19,8 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Entry < ApplicationRecord
+    belongs_to :user
+    belongs_to :room
+
+    validates :room_id, uniquness: { scope: :user_id }
 end

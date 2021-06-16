@@ -19,7 +19,7 @@
   .post-card
     .row
       - @review_ranks.each.with_index(1) do |post, i|
-        .col-sm.d-flex
+        .col-sm-3.d-flex
           .card-body 
             = link_to post_path(post), class: 'post-link' do
               = image_tag post.image, class: 'card-img-top'
