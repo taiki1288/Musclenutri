@@ -1,7 +1,7 @@
-= form_with(model: @message, local: true) do |f|
+= form_with(model: @message, local: false) do |f|
   .message-form-wrapper.text-center
     %i.fa.fa-pencil
     = f.text_field :message, placeholder: 'メッセージを入力してください', class: 'nickname-field'
-    = f.hidden_field :room_id, :value => @room.id 
+    = f.hidden_field :room_id, value: @room.id 
     .message-form-right
       = f.submit '送信', class: 'send-btn'
