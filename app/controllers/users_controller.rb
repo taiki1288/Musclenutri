@@ -16,12 +16,12 @@ class UsersController < ApplicationController
                 @currentUserEntry.each do |cu|
                     @userEntry.each do |u|
                         if cu.room_id == u.room_id
-                            @have_Room = true
+                            @haveRoom = true
                             @roomId = cu.room_id
                         end
                     end
                 end
-                unless @have_Room
+                unless @haveRoom
                     @room = Room.new
                     @entry = Entry.new
                 end
