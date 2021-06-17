@@ -107,3 +107,21 @@
     height: 30px;
     cursor: pointer;
 }
+
+.message-button {
+    width: 90px;
+    height: 35px;
+    border: 1px solid #ff60af;
+    padding: 8px 22px;
+    border-radius: 20px;
+    color: #ff60af;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+.message-button:hover {
+    background-color: #ff60af;
+    color: white;
+}

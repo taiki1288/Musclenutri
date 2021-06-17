@@ -1,4 +1,4 @@
-class Messagecontroller < ApplicationController
+class MessagesController < ApplicationController
     before_action :set_room, only: [:create, :edit, :update, :destroy]
     before_action :set_message, only: [:edit, :update, :destroy]
 
@@ -43,7 +43,7 @@ class Messagecontroller < ApplicationController
         @entries = @room.entries
     end
 
-    def messages_params
+    def message_params
         params.require(:message).permit(:user_id, :message, :room_id).merge(user_id: current_user.id)
     end
 end
