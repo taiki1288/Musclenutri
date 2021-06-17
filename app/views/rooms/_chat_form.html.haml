@@ -1,10 +1,7 @@
-= form_with(model: @message, local: false) do |f|
-  .message-form-wrapper.text-center 
-    .message-form-left
-      %i.fa.fa-pencil{"aria-hidden" => "true"}
-      = f.text_field :message, placeholder: 'メッセージを入力してください', class: 'message-field'
-      = f.hidden_field :room_id, :value => @room.id 
+= form_with(model: @message, local: true) do |f|
+  .message-form-wrapper.text-center
+    %i.fa.fa-pencil
+    = f.text_field :message, placeholder: 'メッセージを入力してください', class: 'nickname-field'
+    = f.hidden_field :room_id, :value => @room.id 
     .message-form-right
-      %button#message-btn.btn-floating.btn-small.teal.profile-dm{disabled: "disabled", name: "button", type: "submit"}
-        %i.fa.fa-paper-plane{"aria-hidden" => "true"}
-    -#   = f.submit '送信', class: 'submit-btn'
+      = f.submit '送信', class: 'send-btn'

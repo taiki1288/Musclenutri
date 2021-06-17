@@ -5,19 +5,18 @@
       %h5.chat-user-name.text-center.fw-bold= "#{e.user.username}"
 
       
-.chats
+.chats.mb-5
   - @messages.each do |m|
     -if m.user.id == current_user.id
       .text-right
         %div{id: 'message_#{m.id}'}
           .chatbox.text-right 
             .chat-face1.text-right
-              .chat-blowing
-                %br
+              .my-message
                 = m.message 
                 %br
-                .chat-time
-                  = m.created_at.strftime("%Y-%m-%d %H:%M")
+              .chat-time
+                = m.created_at.strftime("%Y-%m-%d %H:%M")
                 -# = form_with(model: @message, url: edit_message_path(m.id), remote: true, method: :get) do |f|
                 -#   = f.hidden_field :room_id, value: @room.id
                 -#   = f.submit '編集'

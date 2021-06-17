@@ -37,14 +37,14 @@
 }
 
 .message-card {
-    width: 80%;
+    width: 90%;
     padding: 24px;
     box-shadow: 0px 0px 8px #000;
     align-items: center;
     margin-top: 30px;
     margin-bottom: 30px;
     margin: 0 auto;
-    margin-top: 60px;
+    margin-top: 30px;
     margin-bottom: 60px;
     border-radius: 10px;
 }
@@ -58,16 +58,33 @@
     padding: 10px 15px;
 }
 
-.message-form {
-    width: 80%;
-    margin: 0 auto;
-}
-
-.message-field {
-    width: 80%;
-}
-
 .message-form-wrapper {
     display: flex;
-    width: 80%;
+    align-items: center;
+    justify-content: center;
+
+    input[type="text"]:focus {
+        border: none;
+        border-bottom: 1px solid skyblue;
+        outline: 0;
+    }
+}
+
+.send-btn {
+    width: 60px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: #ff60af;
+    color: white;
+}
+
+.my-message {
+    display: inline-block;
+    border: 1px solid skyblue;
+    background-color: skyblue;
+    border-radius: 10px;
+    color: #fafafa;
+    padding: 10px 15px;
+    text-align: left;
+    word-wrap: break-word;
 }
