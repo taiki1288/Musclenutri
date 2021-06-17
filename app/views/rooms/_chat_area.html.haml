@@ -16,12 +16,9 @@
                 %br
               .chat-time
                 = m.created_at.strftime("%Y-%m-%d %H:%M")
-                -# = form_with(model: @message, url: edit_message_path(m.id), remote: true, method: :get) do |f|
-                -#   = f.hidden_field :room_id, value: @room.id
-                -#   = f.submit '編集'
-                -# = form_with(model: @message, url: message_path(m.id), remote: true, method: :delete) do |f|
-                -#   = f.hidden_field :room_id, value: @room.id
-                -#   = f.submit '編集'
+                = form_with(model: @message, url: message_path(m.id), local: false, method: :delete) do |f|
+                  = f.hidden_field :room_id, value: @room.id
+                  = f.submit '削除', class: 'destroy-btn'
     - else 
       .text-left 
         .message-avatar.mb-2 
