@@ -17,17 +17,18 @@
           %span#following-count= @user.followings.count
           人
     - if @user != current_user
-      .profilePage_user_have_item.mb-4
+      .profilePage_user_have_item.mb-3
         .follow-btn.hidden.fw-bold.text-center
           %p フォローする
         .unfollow-btn.hidden.fw-bold.text-center
           %p フォローを外す
-    .profile-introduction.mb-5 
+      .dm-btn.mb-5     
+        = render "contact"
+
+    .profile-introduction.mb-4 
       %p.introduction 自己紹介
       %p.introduction-content
         = @user.profile&.introduction
-
-    = render "contact"
 
   %ul.tabs
     %li.tabs_item.fw-bold.active

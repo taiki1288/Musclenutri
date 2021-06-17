@@ -2,9 +2,8 @@
   - unless e.user.username == current_user.username
     .chat-user-image.text-center
       = image_tag e.user.avatar_image, class: 'chat-avatar'
-      %h5.chat-user-name.text-center.fw-bold= "#{e.user.username}"
+      %h7.chat-user-name.text-center.fw-bold= "#{e.user.username}"
 
-      
 .chats.mb-5
   - @messages.each do |m|
     -if m.user.id == current_user.id
