@@ -31,6 +31,7 @@
               %a.i.fa.fa-envelope-o.nav-link.text-white.fw-bold{href: "/rooms"} メッセージ
             %li.nav-item
               %a.i.fa.fa-bell-o.nav-link.text-white.fw-bold{href: "/notifications"} 通知
+              -# = render 'notifications/circle'
             - if user_signed_in?
               %li.nav-item
                 = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link text-white i fa fa-sign-out fw-bold'

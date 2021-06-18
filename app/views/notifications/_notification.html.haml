@@ -26,7 +26,7 @@
                 = notification.post.username + 'さんの投稿にレビュー'
         = 'しました。'
         %p.text-muted.mb-0
-        -#   = Review.find_by(id: notification.review_id)&.review
+          -# = Review.find_by(id: notification.review_id)&.review
   .small.text-muted.text-right 
     = time_ago_in_words(notification.created_at).upcase
   %hr
