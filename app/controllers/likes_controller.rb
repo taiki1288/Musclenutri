@@ -12,6 +12,7 @@ class LikesController < ApplicationController
     def create
         post = Post.find(params[:post_id])
         post.likes.create!(user_id: current_user.id)
+        post.create_notification_like!(current_user)
         like_count = post.like_counts(post)
         render json: { status: 'ok', likeCounts: like_count }
     end
