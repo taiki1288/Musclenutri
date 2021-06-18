@@ -7,7 +7,7 @@
 .chats.mb-5
   - @messages.each do |m|
     -if m.user.id == current_user.id
-      .text-right
+      .message-right
         %div{id: 'message_#{m.id}'}
           .chatbox.text-right 
             .chat-face1.text-right
@@ -20,7 +20,7 @@
                   = f.hidden_field :room_id, value: @room.id
                   = f.submit '削除', class: 'destroy-btn'
     - else 
-      .text-left 
+      .message-left 
         .message-avatar.mb-2 
           = image_tag m.user.avatar_image, class: 'chat-avatar'
         .message-text
