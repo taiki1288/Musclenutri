@@ -1,0 +1,32 @@
+- visitor = notification.visitor
+- visited = notification.visited
+.notification-list
+  .form-inline 
+    %span
+      = link_to user_path(visitor) do
+        = image_tag visitor.avatar_image, class: 'notification-avatar text-center'
+        %strong.mb-4
+          = visitor.username
+      さんが
+
+      - case notification.action 
+      - when 'follow' then 
+        %span あなたをフォローしました。
+      - when 'like' then 
+        = link_to 'あなたの投稿', notification.post, style: "fw-bold"
+        %p にいいねしました。
+      - when 'review' then 
+        - if notification.post.user_id == visited.id
+          = link_to 'あなたの投稿', notification.post, style: 'fw-bold'
+        -else
+          %span
+            = link_to post_path(notification.post) do
+              = image_tag notification.post.user.avatar_image, class: 'notification-avatar'
+              %strong
+                = notification.post.username + 'さんの投稿'
+        = 'にレビューしました。'
+        %p.text-muted.mb-0
+        -#   = Review.find_by(id: notification.review_id)&.review
+  .small.text-muted.text-right 
+    = time_ago_in_words(notification.created_at).upcase
+  %hr
