@@ -8,7 +8,9 @@ class ReviewsController < ApplicationController
     def create
         post = Post.find(params[:post_id])
         @review = post.reviews.build(review_params)
+        @post = @review.post
         if @review.save!
+            @post.create_notification_review!(current_user, @review.id)
             redirect_to post_reviews_path(@review), notice: 'レビューが完了しました。'
         else
             render post_path, notice: 'レビューに失敗しました。'
