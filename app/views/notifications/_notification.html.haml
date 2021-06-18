@@ -14,17 +14,17 @@
         %span あなたをフォローしました。
       - when 'like' then 
         = link_to 'あなたの投稿', notification.post, style: "fw-bold"
-        %p にいいねしました。
+        %span にいいねしました。
       - when 'review' then 
         - if notification.post.user_id == visited.id
-          = link_to 'あなたの投稿', notification.post, style: 'fw-bold'
+          = link_to 'あなたの投稿にレビュー', notification.post, style: 'fw-bold'
         -else
           %span
             = link_to post_path(notification.post) do
               = image_tag notification.post.user.avatar_image, class: 'notification-avatar'
               %strong
-                = notification.post.username + 'さんの投稿'
-        = 'にレビューしました。'
+                = notification.post.username + 'さんの投稿にレビュー'
+        = 'しました。'
         %p.text-muted.mb-0
         -#   = Review.find_by(id: notification.review_id)&.review
   .small.text-muted.text-right 
