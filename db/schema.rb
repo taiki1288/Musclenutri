@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_16_025550) do
+ActiveRecord::Schema.define(version: 2021_06_18_010019) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
-    t.string "name", limit: 191, null: false
-    t.string "record_type", limit: 191, null: false
+    t.string "name", null: false
+    t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
@@ -23,20 +23,20 @@ ActiveRecord::Schema.define(version: 2021_06_16_025550) do
   end
 
   create_table "active_storage_blobs", charset: "utf8mb4", force: :cascade do |t|
-    t.string "key", limit: 191, null: false
-    t.string "filename", limit: 191, null: false
-    t.string "content_type", limit: 191
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
     t.text "metadata"
-    t.string "service_name", limit: 191, null: false
+    t.string "service_name", null: false
     t.bigint "byte_size", null: false
-    t.string "checksum", limit: 191, null: false
+    t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
   create_table "active_storage_variant_records", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "blob_id", null: false
-    t.string "variation_digest", limit: 191, null: false
+    t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
@@ -68,9 +68,24 @@ ActiveRecord::Schema.define(version: 2021_06_16_025550) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "notifications", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "visitor_id", null: false
+    t.integer "visited_id", null: false
+    t.integer "post_id"
+    t.integer "review_id"
+    t.string "action", default: "", null: false
+    t.boolean "checked", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_notifications_on_post_id"
+    t.index ["review_id"], name: "index_notifications_on_review_id"
+    t.index ["visited_id"], name: "index_notifications_on_visited_id"
+    t.index ["visitor_id"], name: "index_notifications_on_visitor_id"
+  end
+
   create_table "posts", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "name", limit: 191, null: false
+    t.string "name", null: false
     t.text "content", null: false
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
@@ -80,7 +95,7 @@ ActiveRecord::Schema.define(version: 2021_06_16_025550) do
 
   create_table "profiles", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "nickname", limit: 191
+    t.string "nickname"
     t.text "introduction"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -122,17 +137,17 @@ ActiveRecord::Schema.define(version: 2021_06_16_025550) do
   end
 
   create_table "tags", charset: "utf8mb4", force: :cascade do |t|
-    t.string "tag_name", limit: 191, null: false
+    t.string "tag_name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["tag_name"], name: "index_tags_on_tag_name", unique: true
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
-    t.string "email", limit: 191, default: "", null: false
-    t.string "encrypted_password", limit: 191, default: "", null: false
-    t.string "username", limit: 191, default: "", null: false
-    t.string "reset_password_token", limit: 191
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "username", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
