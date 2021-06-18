@@ -22,6 +22,7 @@ class Post < ApplicationRecord
     has_many :likes, dependent: :destroy
     has_many :tag_relationships, dependent: :destroy
     has_many :tags, through: :tag_relationships
+    has_many :notifications, dependent: :destroy
 
 
     def avg_score
