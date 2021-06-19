@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
     def index
         @posts = Post.all
+        @posts = @posts.page(params[:page]).per(8)
         @post_ranks = Post.create_all_ranks
         @tag_list = Tag.all
         @tag_ranks = Tag.find(TagRelationship.group(:tag_id).order(Arel.sql('count(tag_id)desc')).limit(20).pluck(:tag_id))

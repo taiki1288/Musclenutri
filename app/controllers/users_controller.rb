@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     def index
-        @users = User.all
+        @users = User.all.page(params[:page])
     end
 
     def show
@@ -31,6 +31,7 @@ class UsersController < ApplicationController
 
     def search
         @users = User.search(params[:keyword])
+        @users = @users.page(params[:page]).per(12)
         @keyword = params[:keyword]
         render "index"
     end

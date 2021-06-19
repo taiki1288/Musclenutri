@@ -17,7 +17,6 @@ class FollowsController < ApplicationController
         follower_count = user.follower_counts(user)
         following_count = user.following_counts(user)
         render json: { status: 'ok', followerCounts: follower_count, followingCounts: following_count }
-        # binding.pry
     end
 
 end
