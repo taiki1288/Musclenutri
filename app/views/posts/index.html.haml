@@ -47,6 +47,7 @@
                   = image_tag post.user.avatar_image, class: 'avatar-image'
                   .review-name
                     %p.text-left.no-underline= post.user.profile.nickname
+    = paginate @posts
      
   = link_to new_post_path do
     .float_btn
