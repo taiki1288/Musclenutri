@@ -9,6 +9,11 @@
     margin-top: 60px;
     margin-bottom: 60px;
     border-radius: 10px;
+
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 60px;
+    box-sizing: border-box;
 }
 
 .rakuten-search-form {
