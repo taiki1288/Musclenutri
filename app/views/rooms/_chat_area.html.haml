@@ -18,7 +18,7 @@
                 = m.created_at.strftime("%Y-%m-%d %H:%M")
                 = form_with(model: @message, url: message_path(m.id), local: false, method: :delete) do |f|
                   = f.hidden_field :room_id, value: @room.id
-                  = f.submit '削除', class: 'destroy-btn'
+                  = f.submit '削除', class: 'destroy-btn mb-2'
     - else 
       .message-left 
         .message-avatar.mb-2 
