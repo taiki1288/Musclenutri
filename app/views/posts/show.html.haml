@@ -1,7 +1,7 @@
 .container
   .post-card-body-show.mt-5#post-show{data: {post_id: @post.id}}
-    = image_tag @post.image, class: 'card-img-top'
-    %p.post-title.text-center.no-underline= "商品名: #{@post.name}"
+    %h5.post-title.text-center.no-underline.fw-bold.mb-4= "商品名: #{@post.name}"
+    = image_tag @post.image, class: 'card-img-top mb-5'
     %p.product-price.text-center.no-underline= "購入価格: #{@post.price}円"
     %p.card-text.text-center.no-underline.mb-4= "感想: #{@post.content}"
 

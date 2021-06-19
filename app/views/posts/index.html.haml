@@ -22,8 +22,8 @@
         .col-sm-3.d-flex
           .card-body 
             = link_to post_path(post), class: 'post-link' do
+              %p.post-title.text-center.no-underline.mb-3.fw-bold= "商品名: #{post.name}"                         
               = image_tag post.image, class: 'card-img-top'
-              %p.post-title.text-center.no-underline.mb-3= "商品名: #{post.name}"                         
     
     .post-card        
       .h2.post-tag-title.text-center.mb-4 人気のタグ
@@ -40,8 +40,8 @@
           .col-sm-3.d-flex
             .post-card-body
               = link_to post_path(post), class: 'post-link' do
+                %p.post-title.text-center.no-underline.mb-3.fw-bold= "商品名: #{post.name}"
                 = image_tag post.image, class: 'card-img-top'
-                %p.post-title.text-center.no-underline.mb-3= "商品名: #{post.name}"
 
                 .post-avatar-name.text-center
                   = image_tag post.user.avatar_image, class: 'avatar-image'
