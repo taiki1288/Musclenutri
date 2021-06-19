@@ -11,7 +11,6 @@ class MessagesController < ApplicationController
                 gets_entries_all_messages
                 @roommembernotme = Entry.where(room_id: @room.id).where.not(user_id: current_user.id)
                 @theid = @roommembernotme.find_by(room_id: @room.id)
-                # binding.pry
                 notification = current_user.active_notifications.new(
                     room_id: @room.id,
                     message_id: @message.id,
@@ -19,7 +18,6 @@ class MessagesController < ApplicationController
                     visitor_id: current_user.id,
                     action: 'message'
                 )
-                # binding.pry
                 notification.save if notification.valid?
             else
                 flash[:alert] = 'メッセージの送信に失敗しました。'
