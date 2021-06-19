@@ -27,6 +27,8 @@
         = 'しました。'
         %p.text-muted.mb-0
           -# = Review.find_by(id: notification.review_id)&.review
+      - when 'message' then
+        %span あなたにメッセージを送信しました。
   .small.text-muted.text-right 
     = time_ago_in_words(notification.created_at).upcase
   %hr
