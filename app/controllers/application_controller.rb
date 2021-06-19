@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
     def after_sign_in_path_for(resource)
-      root_path # ログイン後に遷移するpathを設定
+      root_path
     end
     
     def after_sign_out_path_for(resource)
-      new_user_session_path # ログアウト後に遷移するpathを設定
+      new_user_session_path
     end
 
     def check_guest
