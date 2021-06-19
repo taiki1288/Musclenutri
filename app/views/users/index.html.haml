@@ -1,5 +1,5 @@
 .container 
-  .userlist-card
+  .userlist-card.mt-5
     %h4.user-list-name.text-center.fw-bold.mb-4 ユーザー一覧
     .search-form.text-center.mb-5
       = form_with url: search_path, method: :get, remote: true do |f|
@@ -19,6 +19,10 @@
             %p= user.username
 
   = paginate @users
+
+  = link_to new_post_path do
+    .float_btn
+      %i.fa-2x.fa.fa-pencil-square-o{"aria-hidden" => "true"}
 
 %footer.footer.mt-5
   .container

@@ -8,6 +8,10 @@
       = render @notifications
     - else
       %p.text-center 通知はありません
+  
+  = link_to new_post_path do
+    .float_btn
+      %i.fa-2x.fa.fa-pencil-square-o{"aria-hidden" => "true"}
 
 %footer.footer.mt-5
   .container
