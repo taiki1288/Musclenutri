@@ -7,8 +7,10 @@
 #  checked    :boolean          default(FALSE), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  message_id :integer
 #  post_id    :integer
 #  review_id  :integer
+#  room_id    :integer
 #  visited_id :integer          not null
 #  visitor_id :integer          not null
 #
