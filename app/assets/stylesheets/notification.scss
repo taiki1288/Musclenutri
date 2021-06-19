@@ -22,7 +22,7 @@
     padding-top: 10px;
     margin: 0 auto;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     color: #fafafa;
 }
 
@@ -37,8 +37,6 @@
 }
 
 .notification-list {
-    // padding-top: 1rem;
-    // padding-bottom: 1rem;
 
     span {
         p {
@@ -51,4 +49,11 @@
     }
 }
     
+.destroy-btn {
+   color: skyblue;
+}
+
+.message-time  {
+    text-align: right;
+}
 
