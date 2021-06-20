@@ -8,11 +8,15 @@
           %p 画像を変更
           = f.file_field :avatar, class: 'avatar-field', style: 'display:none'  
       %div
-        = f.label :nickname, '名前', class: 'nickname-text mb-3'
+        = f.label :nickname, '名前', class: 'nickname-text mb-1'
       %div
         = f.text_field :nickname, class: 'nickname-field mb-4' 
+      %div
+        = f.label :競技種目, class: 'sportingevent-name mb-1'
+      %div.mb-3
+        = f.select :sportingevent, [["野球", "野球"], ["ソフトボール", "ソフトボール"], ["サッカー", "サッカー"],["フットサル", "フットサル"], ["ゴルフ", "ゴルフ"], ["バスケットボール", "バスケットボール"], ["ラグビー", "ラグビー"], ["テニス", "テニス"], ["バレーボール", "バレーボール"], ["陸上", "陸上"], ["水泳", "水泳"], ["ボクシング", "ボクシング",], ["キックボクシング", "キックボクシング"], ["総合格闘技", "総合格闘技"], ["アメフト", "アメフト"], ["ボディービルダー", "ボディービルダー"], ["その他", "その他"]], include_blank: true, class: 'select-field mb-3'
       %div 
-        = f.label :introduction, '自己紹介', class: 'introduction-text'
+        = f.label :introduction, '自己紹介', class: 'introduction-text mb-2'
       %div
         = f.text_area :introduction, class: 'introduction-field mb-5'
       .actions
