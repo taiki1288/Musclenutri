@@ -14,7 +14,7 @@
       %p.post-discription.text-center 自分に合ったプロテインやサプリを選んでいただけるように「Musclenutri」は誕生しました。
       %p.post-discription.text-center このサービスを使うことで、少しでも多くの人がバランスの良い栄養補給ができ、競技スポーツのパフォーマンス向上ができるように願っております。
   
-  %h3.like-lank.text-center レビュー平均点数が高いプロテインやサプリ
+  %h3.like-lank.text-center.fw-bold レビュー平均点数が高いプロテインやサプリ
 
   .post-card
     .row
@@ -24,30 +24,38 @@
             = link_to post_path(post), class: 'post-link' do
               %p.post-title.text-center.no-underline.mb-3.fw-bold= "商品名: #{post.name}"                         
               = image_tag post.image, class: 'card-img-top'
-    
-    .post-card        
-      .h2.post-tag-title.text-center.mb-4 人気のタグ
-      .tag-list.text-center.no-underline.mb-5
-        - @tag_ranks.each.with_index(1) do |list,i|
-          .tag-count
-            = link_to "##{list.tag_name}", tag_posts_path(tag_id: list.id), class: 'text-center tag-name mb-5'
-            %span.tag-count-item= "#{list.posts.count}"
 
-    %h2.text-center.mb-3 口コミされたプロテインとサプリ
-    .post-card
-      .row
-        - @posts.each do |post|
-          .col-sm-3.d-flex
-            .post-card-body
-              = link_to post_path(post), class: 'post-link' do
-                %p.post-title.text-center.no-underline.mb-3.fw-bold= "商品名: #{post.name}"
-                = image_tag post.image, class: 'card-img-top'
+  .post-card.text-center
+    .row.mb-5
+      .col.d-flex
+        .chart-card-body.text-center
+          %h3.fw-bold サービス利用者の競技種目別割合
+          = pie_chart Profile.group(:sportingevent).count
 
-                .post-avatar-name.text-center
-                  = image_tag post.user.avatar_image, class: 'avatar-image'
-                  .review-name
-                    %p.text-left.no-underline= post.user.profile.nickname
-                    %p.post-sportingevent= "競技種目: #{post.user.profile.sportingevent}"
+      .col  
+        .tag-card-body     
+          .h3.post-tag-title.text-center.mb-5.fw-bold 人気のタグ
+          .tag-list.text-center.no-underline.mb-5
+            - @tag_ranks.each.with_index(1) do |list,i|
+              .tag-count
+                = link_to "##{list.tag_name}", tag_posts_path(tag_id: list.id), class: 'text-center tag-name mb-5'
+                %span.tag-count-item= "#{list.posts.count}"
+
+  %h2.text-center.mb-3.fw-bold 口コミされたプロテインとサプリ
+  .post-card
+    .row
+      - @posts.each do |post|
+        .col-sm-3.d-flex
+          .post-card-body
+            = link_to post_path(post), class: 'post-link' do
+              %p.post-title.text-center.no-underline.mb-3.fw-bold= "商品名: #{post.name}"
+              = image_tag post.image, class: 'card-img-top'
+
+              .post-avatar-name.text-center
+                = image_tag post.user.avatar_image, class: 'avatar-image'
+                .review-name
+                  %p.text-left.no-underline= post.user.profile.nickname
+                  %p.post-sportingevent= "競技種目: #{post.user.profile.sportingevent}"
     = paginate @posts
      
   = link_to new_post_path do
