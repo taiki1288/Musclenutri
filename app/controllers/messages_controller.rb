@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+    before_action :authenticate_user!
     before_action :set_room, only: [:create, :edit, :update, :destroy]
     before_action :set_message, only: [:edit, :update, :destroy]
 
