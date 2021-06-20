@@ -18,7 +18,7 @@
           人
     .profile-sportingevent 
       %p.sportingevent-title 競技種目
-      %p= current_user.profile.sportingevent
+      %p= current_user.profile&.sportingevent
     .profile-introduction.mb-5 
       %p.introduction 自己紹介
       %p.introduction-content
