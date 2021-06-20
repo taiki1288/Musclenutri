@@ -1,6 +1,10 @@
 .container
   .post-card-body-show.mt-5#post-show{data: {post_id: @post.id}}
     %h5.post-title.text-center.no-underline.fw-bold.mb-4= "商品名: #{@post.name}"
+    .delete-btn.mb-3
+      = link_to post_path(@post.id), data: { confirm: "【確認】投稿を削除してもよろしいですか？" }, method: :delete do
+        %i.fa.fa-trash-o.message-destroy-btn.mb-3.fw-bold
+          削除する
     - if @post.image.attached?
       = image_tag @post.image, class: 'card-img-top mb-5'
     %p.product-price.text-center.no-underline= "購入価格: #{@post.price}円"
