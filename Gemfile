@@ -29,6 +29,7 @@ gem 'hamlit'
 gem 'rakuten_web_service'
 gem 'dotenv-rails'
 gem 'kaminari'
+gem 'chartkick'
 # gem 'font-awesome-sass'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
