@@ -1,6 +1,6 @@
 .container
   .profile-card-body.text-center
-    %h5.card-title.pt-3.mb-4 プロフィール
+    %h5.card-title.pt-3.mb-4.fw-bold プロフィール
     = image_tag current_user.avatar_image , class: 'profile-image mb-3'
     %p.fs-4.mb-4.fw-bold= current_user.display_name
     
@@ -16,6 +16,9 @@
           フォロー
           %span#following-count= current_user.followings.count
           人
+    .profile-sportingevent 
+      %p.sportingevent-title 競技種目
+      %p= current_user.profile&.sportingevent
     .profile-introduction.mb-5 
       %p.introduction 自己紹介
       %p.introduction-content
