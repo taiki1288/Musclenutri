@@ -24,13 +24,18 @@
           %p フォローする
         .unfollow-btn.hidden.fw-bold.text-center
           %p フォローを外す
-      .dm-btn.mb-5     
+      .dm-btn.mb-4  
         = render "contact"
 
+    .profile-sporting-event
+      %p.introduction.mb-2 競技種目 
+      %p.introduction-content= @user.profile.sportingevent
+        
+
     .profile-introduction.mb-4 
-      %p.introduction 自己紹介
-      %p.introduction-content
-        = @user.profile&.introduction
+      %p.introduction.mb-3 自己紹介
+      %p.introduction-content= @user.profile&.introduction
+        
 
   %ul.tabs
     %li.tabs_item.fw-bold.active
