@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     resources :follows, only: [:show, :create]
     resources :unfollows, only: [:show, :create]
-    resources :followings, only: [:index]
-    resources :followers, only: [:index]
+    member do
+      get :following, :followers
+    end
   end
 
   get 'search' => 'users#search'

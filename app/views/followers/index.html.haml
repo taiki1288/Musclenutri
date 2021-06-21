@@ -4,7 +4,7 @@
     .users-list
     - @followers.each do |follower|
       %ul
-        = link_to user_path(@user), class: 'no-underline' do
+        = link_to followers_user_path(@user), class: 'no-underline' do
           %li.users-list-item
             .users-list-image
               %p= image_tag follower.avatar_image, class: 'userlist-avatar'
