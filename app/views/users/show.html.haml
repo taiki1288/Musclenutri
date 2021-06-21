@@ -6,16 +6,18 @@
     
     .profilePage_user_have
       .profilePage_user_have_item
-        #follower
-          フォロワー
-          %span#follower-count= @user.followers.count
-          人
+        = link_to user_followers_path(@user.id) do
+          #follower
+            フォロワー
+            %span#follower-count= @user.followers.count
+            人
       .profile-vertical-line 
       .profilePage_user_have_item
-        #follow
-          フォロー
-          %span#following-count= @user.followings.count
-          人
+        = link_to user_followings_path(@user.id) do
+          #follow
+            フォロー
+            %span#following-count= @user.followings.count
+            人
     - if @user != current_user
       .profilePage_user_have_item.mb-3
         .follow-btn.hidden.fw-bold.text-center
