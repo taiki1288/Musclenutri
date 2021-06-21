@@ -6,16 +6,18 @@
     
     .profilePage_user_have
       .profilePage_user_have_item
-        #follower
-          フォロワー
-          %span#follower-count= current_user.followers.count
-          人
+        = link_to user_followers_path(@profile) do
+          #follower
+            フォロワー
+            %span#follower-count= current_user.followers.count
+            人
       .profile-vertical-line 
       .profilePage_user_have_item
-        #follow
-          フォロー
-          %span#following-count= current_user.followings.count
-          人
+        = link_to user_followings_path(@profile) do
+          #follow
+            フォロー
+            %span#following-count= current_user.followings.count
+            人
     .profile-sportingevent 
       %p.sportingevent-title 競技種目
       %p= current_user.profile&.sportingevent

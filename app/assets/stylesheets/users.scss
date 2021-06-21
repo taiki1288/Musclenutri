@@ -47,6 +47,17 @@ ul {
     border-bottom: 1px solid #e0e0e0;
 }
 
+.profilePage_user_have_item {
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover {
+    color: black;
+  }
+}
+
 .search-field {
     width: 80%;
     height: 40px;
