@@ -44,10 +44,10 @@ class PostsController < ApplicationController
         end
     end
 
-    def destory
+    def destroy
         post = current_user.posts.find(params[:id])
-        post.destory!
-        redirect_to root_path
+        post.destroy!
+        redirect_to root_path, notice: '削除に成功しました'
     end
 
     def tags
