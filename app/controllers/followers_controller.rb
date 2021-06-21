@@ -3,7 +3,7 @@ class FollowersController < ApplicationController
 
     def index
         @user = User.find(params[:user_id])
-        @followes = @user.followers
+        @followers = @user.followers
     end
-    
+
 end
