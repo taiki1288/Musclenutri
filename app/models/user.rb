@@ -42,6 +42,10 @@ class User < ApplicationRecord
     profile&.nickname || self.username
   end
 
+  def has_written?(post)
+    posts.exists?(id: post.id)
+  end
+
   def prepare_profile
     profile || build_profile
   end
