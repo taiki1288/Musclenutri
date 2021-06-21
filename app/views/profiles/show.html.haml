@@ -6,14 +6,14 @@
     
     .profilePage_user_have
       .profilePage_user_have_item
-        = link_to user_followers_path(@profile) do
+        = link_to followers_user_path(current_user.id) do
           #follower
             フォロワー
             %span#follower-count= current_user.followers.count
             人
       .profile-vertical-line 
       .profilePage_user_have_item
-        = link_to user_followings_path(@profile) do
+        = link_to following_user_path(current_user.id) do
           #follow
             フォロー
             %span#following-count= current_user.followings.count
