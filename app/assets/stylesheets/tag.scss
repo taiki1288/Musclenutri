@@ -10,6 +10,13 @@
     padding-top: 10px;
 }
 
+.tag-post-card {
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+}
+
 .tag-count {
     display: inline-block;
     margin: 0 .1em .6em 0;
