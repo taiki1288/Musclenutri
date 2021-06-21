@@ -1,9 +1,10 @@
 .container 
   .notification-card.mt-4 
     %h2.notification.text-center 通知
-    = link_to notification_path(@notifications), data: { confirm: "【確認】メッセージをすべて削除してもよろしいですか？" }, method: :delete do
-      %i.fa.fa-trash-o.message-destroy-btn.mb-3.fw-bold
-        すべて削除
+    .notification-destroy-btn
+      = link_to notification_path(@notifications), data: { confirm: "【確認】メッセージをすべて削除してもよろしいですか？" }, method: :delete do
+        %i.fa.fa-trash-o.message-destroy-btn.mb-3.fw-bold
+          すべて削除
     -if @notifications.exists?
       = render @notifications
     - else
