@@ -54,6 +54,7 @@ class PostsController < ApplicationController
         @tag_list = Tag.all
         @tag = Tag.find(params[:tag_id])
         @posts = @tag.posts.all
+        @posts = @posts.page(params[:page]).per(8)
     end
 
     private

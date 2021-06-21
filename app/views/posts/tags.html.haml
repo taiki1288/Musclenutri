@@ -17,6 +17,7 @@
                 = image_tag post.user.avatar_image, class: 'avatar-image'
                 .review-name
                   %p.text-left.no-underline= post.user.profile.nickname
+  = paginate @posts
 
 %footer.footer.mt-5
   .container
