@@ -3,7 +3,7 @@
     = "##{@tag.tag_name}"
     のタグの投稿 #{"#{@posts.count}件"}
 
-  .post-card
+  .tag-post-card
     .row
       - @posts.each do |post|
         .col-sm-3.d-flex
@@ -17,6 +17,7 @@
                 = image_tag post.user.avatar_image, class: 'avatar-image'
                 .review-name
                   %p.text-left.no-underline= post.user.profile.nickname
+  = paginate @posts
 
 %footer.footer.mt-5
   .container
