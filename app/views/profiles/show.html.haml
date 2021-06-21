@@ -19,12 +19,11 @@
             %span#following-count= current_user.followings.count
             人
     .profile-sportingevent 
-      %p.sportingevent-title 競技種目
+      %p.sportingevent-title.mb-2 競技種目
       %p= current_user.profile&.sportingevent
-    .profile-introduction.mb-5 
-      %p.introduction 自己紹介
-      %p.introduction-content
-        = current_user.profile&.introduction
+    .profile-introduction.mb-5
+      %p.introduction.mb-2 自己紹介
+      %p.introduction-content= current_user.profile&.introduction
         
 
     = link_to 'プロフィールを編集する', edit_profile_path, method: :get, class: 'login-btn3'
