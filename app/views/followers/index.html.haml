@@ -6,6 +6,9 @@
       %ul
         = link_to user_path(@user), class: 'no-underline' do
           %li.users-list-item
-            %p= image_tag follower.avatar_image, class: 'userlist-avatar'
-            %p= follower.username
+            .users-list-image
+              %p= image_tag follower.avatar_image, class: 'userlist-avatar'
+            .users-list-info
+              %p= follower.username
+              %p.users-sporting-event= "競技種目: #{follower.profile.sportingevent}"
     
