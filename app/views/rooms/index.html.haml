@@ -1,0 +1,9 @@
+.container 
+  .message-list 
+    - @rooms.each do |room|
+      .message-list-card 
+        = link_to room_path(room) do
+          .message-card  
+            %p= open_user(room)
+            %p= new_message_preview(room)
+        
