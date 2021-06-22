@@ -27,12 +27,6 @@ Rails.application.routes.draw do
 
   resource :profile, only: [:show, :edit, :update]
 
-  namespace :api, format: :json do
-    namespace :v1 do
-      resource :likes, only: [:create, :destroy]
-    end
-  end
-
   resources :tags do
     get 'posts', to: 'posts#tags'
   end
