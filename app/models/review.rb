@@ -20,4 +20,5 @@ class Review < ApplicationRecord
     belongs_to :post
     has_many :notifications, dependent: :destroy
     validates :score, presence: true
+    validates :content, presence: true, length: { maximum: 150 }
 end
