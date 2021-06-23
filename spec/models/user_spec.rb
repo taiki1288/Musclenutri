@@ -10,11 +10,11 @@ RSpec.describe User, type: :model do
       end
 
       it 'ユーザーネームが15文字以内だと保存できること' do
-        user = build(:user, username: 'a' *15)
+        user = build(:user, username: 'a' * 15)
         expect(user).to be_valid
       end
 
-    end  
+    end
 
     context 'ユーザーが登録できない場合' do
       let!(:user) { create(:user) }
