@@ -42,7 +42,7 @@ RSpec.describe Relationship, type: :model do
         expect(relation2).to be_valid
       end
 
-      it 'follower_idが違うならfollowed_idが同じでも保存できる' do
+      it 'follower_idが違うならfollowing_idが同じでも保存できる' do
         relation2 = FactoryBot.build(:relationship, follower_id: @user1.follower_id, following_id: @relation.following_id)
         expect(relation2).to be_valid
       end
