@@ -29,7 +29,7 @@
 
     .profile-sporting-event
       %p.introduction.mb-2 競技種目 
-      %p.introduction-content= @user.profile.sportingevent
+      %p.introduction-content= @user.profile&.sportingevent
         
 
     .profile-introduction.mb-4 
@@ -52,7 +52,10 @@
               .col-sm-3.d-flex
                 .post-card-body
                   = link_to post_path(post), class: 'post-link' do
-                    = image_tag post.image, class: 'card-img-top'
+                    - if post.image.attached?
+                      = image_tag post.image, class: 'card-img-top'
+                    -else
+                      = image_tag 'noimage.png', class: 'card-img-top'
                     %p.post-title.text-center.no-underline.mb-3= "商品名: #{post.name}"
 
                     .post-avatar-name.text-center
