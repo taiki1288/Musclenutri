@@ -30,6 +30,7 @@ gem 'rakuten_web_service'
 gem 'dotenv-rails'
 gem 'kaminari'
 gem 'chartkick'
+gem 'faker'
 # gem 'font-awesome-sass'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -43,6 +44,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rubocop-rails'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do

@@ -39,8 +39,9 @@ class User < ApplicationRecord
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
   validates :email, presence: true, uniqueness: true
-  validates :username, presence: true, length: { maximun: 20 }
+  validates :username, presence: true, length: { maximum: 15 }
   validates :password, presence: true, length: { minimum: 6 }
+  validates :password_confirmation, presence: true, length: { minimum: 6 }
   
   def display_name
     profile&.nickname || self.username
