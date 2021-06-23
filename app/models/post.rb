@@ -24,6 +24,9 @@ class Post < ApplicationRecord
     has_many :tags, through: :tag_relationships
     has_many :notifications, dependent: :destroy
 
+    validates :name, presence: true, length: { maximum: 30 }
+    validates :content, presence: true, length: { maximum: 300 }
+    validates :price, presence: true
 
     def avg_score
         unless self.reviews.empty?
@@ -32,7 +35,7 @@ class Post < ApplicationRecord
           0.0
         end
       end
-    
+
       def review_score_percentage
         unless self.reviews.empty?
           reviews.average(:score).round(1).to_f*100/5
@@ -107,6 +110,14 @@ class Post < ApplicationRecord
           notification.checked = true
         end
         notification.save if notification.valid?
+      end
+    end
+
+    def post_image
+      if post&.image&.attached?
+        post.image
+      else
+        'noimage.png'
       end
     end
 

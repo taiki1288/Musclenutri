@@ -62,6 +62,14 @@ class User < ApplicationRecord
       'icon_default.png'
     end
   end
+
+  def post_image
+    if post&.image&.attached?
+      post.image
+    else
+      'noimage.png'
+    end
+  end
   
   def self.guest
     find_or_create_by(email: 'guest@example.com') do |user|

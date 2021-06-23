@@ -8,6 +8,8 @@
             削除する
     - if @post.image.attached?
       = image_tag @post.image, class: 'card-img-top mb-5'
+    - else 
+      = image_tag 'noimage.png', class: 'card-img-top mb-5'
     %p.product-price.text-center.no-underline= "購入価格: #{@post.price}円"
     %p.card-text.text-center.no-underline.mb-4= "感想: #{@post.content}"
 
