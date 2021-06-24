@@ -1,0 +1,19 @@
+- user = open_user(room)
+- entry = room.entries.where.not(user_id: current_user)
+- message = room.messages.order(updated_at: :desc)
+= link_to room_path(room) do
+  .room-card.mb-3
+    .message-list-image
+      - if entry[0]&.user&.avatar_image.present?
+        = image_tag entry[0]&.user&.avatar_image, class: 'chat-avatar mr-3 mb-2'
+    .message-list-info
+      %p.dm-name.mb-1= user&.username 
+      - if message.present?
+        %p.dm-message= message[0]&.message
+      - else
+        %p.dm-message= "[まだメッセージはありません]"
+    -#   %p= open_user(room)
+    -#   %p= entry[0]&.user&.username
+    -#   %p= message[0]&.user&.message
+
+    
