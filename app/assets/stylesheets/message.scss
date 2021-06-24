@@ -43,6 +43,10 @@
     margin-top: 30px;
     margin-bottom: 60px;
     border-radius: 10px;
+
+    min-height: 100vh;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .message-text {
@@ -118,10 +122,6 @@
 .dm-message {
     color: gray;
     font-size: 10px;
-}
-
-.dm-name {
-
 }
 
 .messsage-room-title {

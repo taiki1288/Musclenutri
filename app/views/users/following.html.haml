@@ -11,3 +11,11 @@
             .users-list-info
               %p= user.username
               %p.users-sporting-event= "競技種目: #{user.profile.sportingevent}"
+
+  = link_to new_post_path do
+    .float_btn
+      %i.fa-2x.fa.fa-pencil-square-o{"aria-hidden" => "true"}
+        
+%footer.footer.mt-5
+  .container
+    %p.text-muted.text-center ©︎ Copyright 2021 MuscleNutri
