@@ -1,5 +1,5 @@
 .container 
-  .notification-card.mt-4 
+  .notification-card.mt-5
     %h2.notification.text-center 通知
     .notification-destroy-btn
       = link_to notification_path(@notifications), data: { confirm: "【確認】メッセージをすべて削除してもよろしいですか？" }, method: :delete do
