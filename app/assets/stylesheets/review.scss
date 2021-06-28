@@ -8,6 +8,10 @@
     margin-bottom: 50px;
     margin: 0 auto;
     border-radius: 10px;
+
+    min-height: 100vh;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .rating-box {
