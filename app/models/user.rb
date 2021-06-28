@@ -41,7 +41,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :username, presence: true, length: { maximum: 15 }
   validates :password, presence: true, length: { minimum: 6 }
-  validates :password_confirmation, presence: true, length: { minimum: 6 }
+  # validates :password_confirmation, presence: true, length: { minimum: 6 }
   
   def display_name
     profile&.nickname || self.username
@@ -72,7 +72,7 @@ class User < ApplicationRecord
   end
   
   def self.guest
-    find_or_create_by(email: 'guest@example.com') do |user|
+    find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.username = 'guest'
     end
