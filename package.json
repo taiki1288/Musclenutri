@@ -9,7 +9,7 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.0",
     "axios": "^0.21.1",
-    "bootstrap": "^5.0.1",
+    "bootstrap": "^5.0.2",
     "chart.js": "^3.3.2",
     "chartkick": "^4.0.4",
     "jquery": "^3.6.0",
