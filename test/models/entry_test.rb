@@ -18,7 +18,7 @@
 #  fk_rails_...  (room_id => rooms.id)
 #  fk_rails_...  (user_id => users.id)
 #
-require "test_helper"
+require 'test_helper'
 
 class EntryTest < ActiveSupport::TestCase
   # test "the truth" do

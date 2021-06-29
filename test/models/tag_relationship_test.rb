@@ -18,7 +18,7 @@
 #  fk_rails_...  (post_id => posts.id)
 #  fk_rails_...  (tag_id => tags.id)
 #
-require "test_helper"
+require 'test_helper'
 
 class TagRelationshipTest < ActiveSupport::TestCase
   # test "the truth" do

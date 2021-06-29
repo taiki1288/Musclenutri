@@ -42,7 +42,7 @@ class User < ApplicationRecord
   validates :username, presence: true, length: { maximum: 15 }
   validates :password, presence: true, length: { minimum: 6 }
   # validates :password_confirmation, presence: true, length: { minimum: 6 }
-  
+
   def display_name
     profile&.nickname || self.username
   end
@@ -70,7 +70,7 @@ class User < ApplicationRecord
       'noimage.png'
     end
   end
-  
+
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
@@ -79,7 +79,7 @@ class User < ApplicationRecord
   end
 
   def self.search(keyword)
-    where(["username like?", "%#{keyword}%"])
+    where(['username like?', "%#{keyword}%"])
   end
 
   def follow!(user)
@@ -110,7 +110,7 @@ class User < ApplicationRecord
   end
 
   def create_notification_follow!(current_user)
-    temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ", current_user.id, id, 'follow'])
+    temp = Notification.where(['visitor_id = ? and visited_id = ? and action = ? ', current_user.id, id, 'follow'])
     if temp.blank?
       notification = current_user.active_notifications.new(
         visited_id: id,

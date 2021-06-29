@@ -47,7 +47,7 @@ class Post < ApplicationRecord
     def like_by(user)
         likes.where(likes: { user_id: user }).last
     end
-    
+
     def liked_by?(user)
         like_by(user).present?
     end
@@ -68,7 +68,7 @@ class Post < ApplicationRecord
     def like_counts(post)
        likes.count
     end
-    
+
     def self.create_all_ranks
       Post.find(Like.group(:post_id).order('count(post_id) desc').limit(4).pluck(:post_id))
     end
@@ -99,7 +99,7 @@ class Post < ApplicationRecord
     end
 
     def create_notification_like!(current_user)
-      temp = Notification.where(["visitor_id = ? and visited_id = ? and post_id = ? and action = ? ", current_user.id, user_id, id, 'like'])
+      temp = Notification.where(['visitor_id = ? and visited_id = ? and post_id = ? and action = ? ', current_user.id, user_id, id, 'like'])
       if temp.blank?
         notification = current_user.active_notifications.new(
           post_id: id,

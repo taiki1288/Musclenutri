@@ -35,13 +35,13 @@ RSpec.describe Entry, type: :model do
       it 'user_idが入力されていないと保存されない' do
         entry = build(:entry, user_id: nil)
         entry.valid?
-        expect(entry.errors[:user_id]).to include("を入力してください")
+        expect(entry.errors[:user_id]).to include('を入力してください')
       end
 
       it 'room_idがない場合保存されない' do
         entry = build(:entry, room_id: nil)
         entry.valid?
-        expect(entry.errors[:room_id]).to include("を入力してください")
+        expect(entry.errors[:room_id]).to include('を入力してください')
       end
 
     end
@@ -51,7 +51,7 @@ RSpec.describe Entry, type: :model do
       it 'user_idとroom_idの組み合わせは一意でないといけない' do
         entry2 = build(:entry, user_id: entry.user_id, room_id: entry.room_id)
         entry2.valid?
-        expect(entry2.errors[:room_id]).to include("はすでに存在します")
+        expect(entry2.errors[:room_id]).to include('はすでに存在します')
       end
 
       it 'room_idが同じでもuser_idが違うなら保存できる' do
@@ -79,7 +79,7 @@ RSpec.describe Entry, type: :model do
             expect(association.macro).to eq :belongs_to
           end
         end
-        
+
         context 'roomモデルとのアソシエーション' do
           let(:target) { :room }
 

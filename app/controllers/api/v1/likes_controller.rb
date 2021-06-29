@@ -1,5 +1,5 @@
-module Api 
-    module V1 
+module Api
+    module V1
         class LikesController < ApplicationController
             skip_forgery_protection
 
@@ -12,7 +12,7 @@ module Api
                 Like.find(params[:id]).destroy!
                 render json: { }
             end
-            
+
         end
     end
 end
