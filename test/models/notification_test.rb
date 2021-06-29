@@ -21,7 +21,7 @@
 #  index_notifications_on_visited_id  (visited_id)
 #  index_notifications_on_visitor_id  (visitor_id)
 #
-require "test_helper"
+require 'test_helper'
 
 class NotificationTest < ActiveSupport::TestCase
   # test "the truth" do

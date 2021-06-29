@@ -18,7 +18,7 @@
 #  fk_rails_...  (follower_id => users.id)
 #  fk_rails_...  (following_id => users.id)
 #
-require "test_helper"
+require 'test_helper'
 
 class RelationshipTest < ActiveSupport::TestCase
   # test "the truth" do

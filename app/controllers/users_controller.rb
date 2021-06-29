@@ -35,7 +35,7 @@ class UsersController < ApplicationController
         @users = User.search(params[:keyword])
         @users = @users.page(params[:page]).per(12)
         @keyword = params[:keyword]
-        render "index"
+        render 'index'
     end
 
     def followers

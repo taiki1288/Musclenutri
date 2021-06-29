@@ -15,7 +15,7 @@
 #  index_reviews_on_post_id  (post_id)
 #  index_reviews_on_user_id  (user_id)
 #
-require "test_helper"
+require 'test_helper'
 
 class ReviewTest < ActiveSupport::TestCase
   # test "the truth" do

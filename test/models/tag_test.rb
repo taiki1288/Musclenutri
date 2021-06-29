@@ -11,7 +11,7 @@
 #
 #  index_tags_on_tag_name  (tag_name) UNIQUE
 #
-require "test_helper"
+require 'test_helper'
 
 class TagTest < ActiveSupport::TestCase
   # test "the truth" do

@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
     def after_sign_in_path_for(resource)
       root_path
     end
-    
+
     def after_sign_out_path_for(resource)
       new_user_session_path
     end
@@ -13,12 +13,12 @@ class ApplicationController < ActionController::Base
         redirect_to root_path, alert: 'ゲストユーザーの編集・削除はできません'
       end
     end
-    
+
     protect_from_forgery with: :exception
     before_action :configure_permitted_parameters, if: :devise_controller?
-  
+
     protected
-  
+
     def configure_permitted_parameters
       added_attrs = [ :email, :username, :password ]
       devise_parameter_sanitizer.permit :sign_up, keys: added_attrs

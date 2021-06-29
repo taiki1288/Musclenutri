@@ -51,7 +51,7 @@ class MessagesController < ApplicationController
     end
 
     def gets_entries_all_messages
-        @messages = @room.messages.includes(:user).order("created_at asc")
+        @messages = @room.messages.includes(:user).order('created_at asc')
         @entries = @room.entries
     end
 
