@@ -53,5 +53,6 @@ test:
 production:
   <<: *default
   database: Musclenutri_production
-  username: Musclenutri
-  password: <%= ENV['MUSCLENUTRI_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
