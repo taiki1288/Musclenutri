@@ -2,7 +2,7 @@
 lock "~> 3.16.0"
 
 set :application, "Musclenutri"
-set :repo_url, "https://github.com/taiki1288/Musclenutri"
+set :repo_url, "git@github.com:taiki1288/Musclenutri.git"
 set :rbenv_ruby, File.read('.ruby-version').strip
 set :branch, ENV['BRANCH'] || "master"
 
@@ -12,7 +12,7 @@ set :nginx_sites_enabled_path, "/etc/nginx/conf.d"
 append :linked_files, "config/master.key"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "node_modules"
 
-set :deploy_to, '/var/www/Musclenutri'
+set :deploy_to, '/var/www/musclenutri_app'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
