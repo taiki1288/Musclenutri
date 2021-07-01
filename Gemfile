@@ -31,6 +31,7 @@ gem 'faker'
 gem 'hamlit'
 gem 'kaminari'
 gem 'rakuten_web_service'
+gem 'aws-sdk-s3', require: false
 # gem 'font-awesome-sass'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
