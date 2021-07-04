@@ -13,7 +13,7 @@ import $ from 'jquery'
 import axios from 'axios'
 
 Rails.start()
-Turbolinks.start()
+// Turbolinks.start()
 ActiveStorage.start()
 require("chartkick")
 require("chart.js")
