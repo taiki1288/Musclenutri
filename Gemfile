@@ -51,6 +51,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'rubocop-rails'
+  gem "rspec_junit_formatter"
 end
 
 group :development do
