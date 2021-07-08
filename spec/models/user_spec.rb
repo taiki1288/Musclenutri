@@ -57,11 +57,11 @@ RSpec.describe User, type: :model do
         expect(user.errors[:password]).to include('を入力してください')
       end
 
-      it 'パスワードとパスワード確認が一致していないと登録できない' do
-        user = build(:user, password: 'password', password_confirmation: nil)
-        user.valid?
-        expect(user.errors[:password_confirmation]).to include('を入力してください')
-      end
+      # it 'パスワードとパスワード確認が一致していないと登録できない' do
+      #   user = build(:user, password: 'password', password_confirmation: nil)
+      #   user.valid?
+      #   expect(user.errors[:password_confirmation]).to include('を入力してください')
+      # end
 
       it 'emailがすでに存在して重なった場合' do
         user = create(:user)
