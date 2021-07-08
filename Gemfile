@@ -49,9 +49,9 @@ group :development, :test do
   gem 'capistrano-rbenv-vars', '~> 0.1'
   gem 'factory_bot_rails'
   gem 'pry-byebug'
+  gem 'rspec_junit_formatter'
   gem 'rspec-rails'
   gem 'rubocop-rails'
-  gem "rspec_junit_formatter"
 end
 
 group :development do
