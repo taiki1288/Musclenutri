@@ -39,8 +39,8 @@
   * MySQL
   * AWS(VPC, EC2, RDS, S3, Route53, ACM, ALB, IAM)
   * CircleCI
-    * CI:プルリクエスト実行時にRubocopとRspecが自動で実行されます。
-    * CD:Githubのmasterブランチにmargeされた時にCapistranoが実行されて自動デプロイされます 
+    * CI: プルリクエスト実行時にRubocopとRspecが自動で実行されます。
+    * CD: Githubのmasterブランチにmargeされた時にCapistranoが実行されて自動デプロイされます 
 
 ### テスト、静的コード解析
   * Rspec
