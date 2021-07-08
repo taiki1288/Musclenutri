@@ -1,24 +1,65 @@
-# README
+# Musclenutri
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリの概要
+このアプリはポートフォリオとして開発した個人アプリです。
+競技スポーツのパフォーマンス向上や健康維持のためにプロテインやサプリを利用する人のために情報を共有できるアプリです。
 
-Things you may want to cover:
+## URL
 
-* Ruby version
+## このアプリを開発した背景
+自分は小学校１年生から大学3回生の6月までの15年間、部活で野球をしていました。野球において欠かせないのが体作りなのですが、一時期筋トレをしているのにも関わらず筋肉量の計測をしたときに筋肉量が増えていませんでした。なぜかを見つめ直したところ原因は栄養の補給が疎かになっていた事と、プロテインを筋トレ後に飲んでいない事がわかりました。
+原因が分かってからは栄養の補給を意識しプロテインを筋トレ後必ず30分以内のゴールデンタイムに飲むようにしたらその4,5ヶ月後の筋肉量の測定で筋肉量が増えており、体脂肪率も下がったのでプロテインやサプリの重要性を知ることが出来ました。だからこそプロテインやサプリにはこだわることが良いのではないかと思い、プロテインやサプリの情報を共有し合うことができるサービスを作ろうと考えました。
 
-* System dependencies
+## こだわった点
 
-* Configuration
+## 使用技術
+### フロントエンド
+  * Haml/SCSS
+  * Javascript
+  * jQuery
+  * Bootstrap(cssフレームワーク)
 
-* Database creation
+### バックエンド
+  * Ruby(2.6.5)
+  * Ruby on Rails(6.1.3.2)
 
-* Database initialization
+### インフラ、開発環境
+  * Docker
+  * docker-compose
+  * MySQL
+  * AWS(VPC, EC2, RDS, S3, Route53, ACM, ALB, IAM)
+  * CircleCI
+    * CI:プルリクエスト実行時にRubocopとRspecが自動で実行されます。
+    * CD:Githubのmasterブランチにmargeされた時にCapistranoが実行されて自動デプロイされます 
 
-* How to run the test suite
+### テスト、静的コード解析
+  * Rspec
+  * Rubocop
 
-* Services (job queues, cache servers, search engines, etc.)
+### サーバー環境
+  * Nginx
+  * Puma
 
-* Deployment instructions
+### ER図
+![alt](ER.png)
 
-* ...
+### インフラ構成図
+
+### 機能一覧
+  * ユーザー新規登録/ログイン機能
+  * ゲストログイン機能
+  * ユーザー詳細情報/編集
+  * プロテイン、サプリ情報投稿
+  * プロテイン、サプリ投稿一覧
+  * プロテイン、サプリ投稿詳細
+  * いいね機能(Ajax)
+  * レビュー機能
+  * 星レビュー機能(Ajax)
+  * フォロー機能(Ajax)
+  * DM機能(Ajax)
+  * 通知機能
+  * ユーザー検索機能
+  * 商品検索機能
+  * レビューランキング機能
+  * タグ機能
+  * 競技種目別グラフ機能
