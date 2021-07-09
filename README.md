@@ -51,10 +51,10 @@
   * Puma
 
 
-### インフラ構成図
+## インフラ構成図
 ![aws-Page-1 (1)](https://user-images.githubusercontent.com/75205515/125024648-25f1a900-e0bc-11eb-9be9-f87a76665a3a.png)
 
-### ER図
+## ER図
 ![名称未設定ファイル](https://user-images.githubusercontent.com/75205515/125024770-63563680-e0bc-11eb-846f-af697b2ecfee.png)
 
 ## 機能一覧
