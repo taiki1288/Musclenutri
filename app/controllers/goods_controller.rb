@@ -1,6 +1,5 @@
 class GoodsController < ApplicationController
   before_action :authenticate_user!
-  
   def search
     if params[:keyword]
       items = SearchForm.new(keyword: params[:keyword])
