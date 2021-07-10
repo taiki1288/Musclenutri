@@ -28,7 +28,7 @@
 
   .post-card.text-center
     .row.mb-5
-      .col.d-flex
+      .col-sm-6.d-flex
         .chart-card-body.text-center
           %h3.fw-bold サービス利用者の競技種目別割合
           = pie_chart Profile.group(:sportingevent).count

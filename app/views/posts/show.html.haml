@@ -56,7 +56,7 @@
         .review-button
           = f.submit 'レビューする', class: 'review-btn mt-3 mb-4'
         .review-show-button 
-          = link_to 'レビューを見る', post_reviews_path(@post), class: "review-button2 btn btn-danger fw-bold", style: 'padding: 12px; border-radius: 30px;'
+          = link_to 'レビュー閲覧', post_reviews_path(@post), class: "review-button2 btn btn-danger fw-bold", style: 'padding: 10px; border-radius: 30px;'
         
 = render 'commons/newpostbtns'
         
