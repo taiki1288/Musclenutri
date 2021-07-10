@@ -33,7 +33,7 @@
 }
 
 .message-card {
-    width: 90%;
+    width: 80%;
     padding: 24px;
     box-shadow: 0px 0px 8px #000;
     align-items: center;
@@ -136,3 +136,20 @@
     padding-top: 10px;
 }
  
+@media only screen and (max-width: 480px) {
+    .message-card {
+        width: 100%;
+        padding: 24px;
+        box-shadow: 0px 0px 8px #000;
+        align-items: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 60px;
+        border-radius: 10px;
+        min-height: 100vh;
+        position: relative;
+        box-sizing: border-box;
+    }
+}
