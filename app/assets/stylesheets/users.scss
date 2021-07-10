@@ -135,3 +135,23 @@ select {
   transition: all .3s;
   width: calc(80% - 3rem);
 }
+
+@media only screen and (max-width: 480px) {
+  .userlist-card {
+    width: 100%;
+    padding: 1.25rem;
+    padding: 24px;
+    box-shadow: 0px 0px 8px #000;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 10px;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+}
+}
