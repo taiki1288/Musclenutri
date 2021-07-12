@@ -10,7 +10,8 @@
               %p= image_tag user.avatar_image, class: 'userlist-avatar'
             .users-list-info
               %p= user.username
-              %p.users-sporting-event= "競技種目: #{user.profile.sportingevent}"
+              - if user.profile&.sportingevent.present?
+                %p.users-sporting-event= "競技種目: #{user.profile&.sportingevent}"
 
   = render 'commons/newpostbtns'
         

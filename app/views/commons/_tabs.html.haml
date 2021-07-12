@@ -22,7 +22,7 @@
                   .post-avatar-name.text-center
                     = image_tag post.user.avatar_image, class: 'avatar-image'
                   .review-name
-                    %p.text-left.no-underline= post.user.profile.nickname
+                    %p.text-left.no-underline= post.user.profile&.nickname
     - else
       %p.text-center 投稿はありません
   .panel
@@ -39,6 +39,6 @@
                   .post-avatar-name.text-center
                     = image_tag post.user.avatar_image, class: 'avatar-image'
                   .review-name
-                    %p.no-underline= post.user.profile.nickname
+                    %p.no-underline= post.user.profile&.nickname
     - else
       %p.text-center まだありません。

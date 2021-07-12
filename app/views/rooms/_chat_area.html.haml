@@ -1,7 +1,8 @@
 - @entries.each do |e|
   - unless e.user.username == current_user.username
     .chat-user-image.text-center
-      = image_tag e.user.avatar_image, class: 'chat-avatar'
+      = link_to user_path(e.user) do
+        = image_tag e.user.avatar_image, class: 'chat-avatar'
       %h7.chat-user-name.text-center.fw-bold= "#{e.user.username}"
 
 .chats.mb-5
