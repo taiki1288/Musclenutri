@@ -16,7 +16,7 @@
               .post-avatar-name.text-center
                 = image_tag post.user.avatar_image, class: 'avatar-image'
                 .review-name
-                  %p.text-left.no-underline= post.user.profile.nickname
+                  %p.text-left.no-underline= post.user.profile&.nickname
   = paginate @posts
 
   = render 'commons/newpostbtns'

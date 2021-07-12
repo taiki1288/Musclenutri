@@ -58,8 +58,8 @@
               .post-avatar-name.text-center
                 = image_tag post.user.avatar_image, class: 'avatar-image'
                 .review-name
-                  %p.text-left.no-underline= post.user.profile.nickname
-                  %p.post-sportingevent= "競技種目: #{post.user.profile.sportingevent}"
+                  %p.text-left.no-underline= post.user.profile&.nickname
+                  %p.post-sportingevent= "競技種目: #{post.user.profile&.sportingevent}"
     = paginate @posts
      
   = render 'commons/newpostbtns'

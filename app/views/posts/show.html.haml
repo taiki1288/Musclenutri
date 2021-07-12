@@ -28,9 +28,10 @@
           %p= @post.likes.count
 
     .post-avatar-name.text-center
-      = image_tag @post.user.avatar_image, class: 'avatar-image mb-2'
+      = link_to user_path(@post.user) do
+        = image_tag @post.user.avatar_image, class: 'avatar-image mb-2'
       .review-name.mt-1.text-center.mb-2
-        %p.text-left.no-underline= @post.user.profile.nickname
+        %p.text-left.no-underline= @post.user.profile&.nickname
     
     %p.text-center.mb-3 レビューを投稿
 
