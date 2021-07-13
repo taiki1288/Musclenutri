@@ -11,10 +11,10 @@ module Musclenutri
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
-    if Rails.env.development? || Rails.env.test?
-      Bundler.require(*Rails.groups)
-      Dotenv::Railtie.load
-    end
+    # if Rails.env.development? || Rails.env.test?
+    #   Bundler.require(*Rails.groups)
+    #   Dotenv::Railtie.load
+    # end
 
     # Configuration for the application, engines, and railties goes here.
     #
