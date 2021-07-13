@@ -1,6 +1,6 @@
 .container
   .search-list.mt-5
-    %h5.product-search.text-center.fw-bold.mb-4 プロテインやサプリを検索してみよう！！
+    %h5.product-search.text-center.fw-bold.mb-4 プロテインやサプリを検索しよう！
     .rakuten-search-box.text-center
       = form_with url: goods_search_path, method: :get, local: true do |f|
         = f.text_field 'keyword', placeholder: "検索ワードを入力してください...", class: "rakuten-search-form"
