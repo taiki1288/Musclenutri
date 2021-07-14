@@ -8,9 +8,8 @@ set :branch, ENV['BRANCH'] || 'master'
 
 set :nginx_config_name, "#{fetch(:application)}.conf"
 set :nginx_sites_enabled_path, '/etc/nginx/conf.d'
-set :linked_files, '%w{.env}'
 
-append :linked_files, 'config/master.key'
+append :linked_files, 'config/master.key', '%w{.env}'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'node_modules'
 
 set :deploy_to, '/var/www/musclenutri_app'
