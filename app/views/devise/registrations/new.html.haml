@@ -15,9 +15,6 @@
             = f.text_field :username, autofocus: true, class: 'text-field mb-3'
           .field.text-white.fw-bold
             = f.label :パスワード, class: 'mb-3'
-            -# - if @minimum_password_length
-            -#   %em
-            -#     (#{@minimum_password_length} characters minimum)
             %br/
             = f.password_field :password, autocomplete: "new-password", class: 'text-field mb-3'
           .field.mb-3.text-white.fw-bold
@@ -28,4 +25,3 @@
             = f.submit "アカウント登録", class: 'login-btn'
           %p.start-signup.mb-1.text-white.fw-bold
             %a{href: "/users/sign_in"} ログインはこちら
-        -# = render "devise/shared/links"

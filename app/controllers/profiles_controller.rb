@@ -3,7 +3,6 @@ class ProfilesController < ApplicationController
 
     def show
         @profile = current_user.profile
-        # @user = User.find(params[:id])
     end
 
     def edit
