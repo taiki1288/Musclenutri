@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
         @post = @review.post
         if @review.save!
             @post.create_notification_review!(current_user, @review.id)
-            redirect_to post_reviews_path(@review), notice: 'レビューが完了しました。'
+            redirect_to post_reviews_path(@review.post), notice: 'レビューが完了しました。'
         else
             render post_path, notice: 'レビューに失敗しました。'
         end
