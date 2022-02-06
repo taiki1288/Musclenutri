@@ -29,8 +29,6 @@ services:
       RAILS_ENV: development
       WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
     command: ./bin/webpack-dev-server
-    #   ports:
-    #     - '3035:3035'
 
 volumes:
   mysql-data:
