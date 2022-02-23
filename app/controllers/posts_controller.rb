@@ -2,7 +2,7 @@ class PostsController < ApplicationController
     before_action :authenticate_user!, only:[:new, :create, :edit, :destory]
 
     def index
-        @posts = Post.all
+        @posts = Post.includes(:user)
         @posts = @posts.page(params[:page]).per(8)
         @post_ranks = Post.create_all_ranks
         @tag_list = Tag.all
