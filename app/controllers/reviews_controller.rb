@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
 
     def index
         @post = Post.find(params[:post_id])
-        @reviews = @post.reviews.includes([:user])
+        @reviews = @post.reviews.includes(:user)
     end
 
     def create
